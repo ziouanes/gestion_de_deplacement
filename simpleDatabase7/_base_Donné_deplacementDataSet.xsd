@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="_base_Donné_deplacementDataSet" targetNamespace="http://tempuri.org/_base_Donné_deplacementDataSet.xsd" xmlns:mstns="http://tempuri.org/_base_Donné_deplacementDataSet.xsd" xmlns="http://tempuri.org/_base_Donné_deplacementDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="base_Donné_deplacementConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="base_Donné_deplacementConnectionString (Settings)" PropertyReference="ApplicationSettings.simpleDatabase7.Properties.Settings.GlobalReference.Default.base_Donné_deplacementConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GRADETableAdapter" GeneratorDataComponentClassName="GRADETableAdapter" Name="GRADE" UserDataComponentName="GRADETableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="base_Donné_deplacementConnectionString (Settings)" DbObjectName="GRADE" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT type, Taux FROM GRADE</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="type" DataSetColumn="type" />
+              <Mapping SourceColumn="Taux" DataSetColumn="Taux" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="missionTableAdapter" GeneratorDataComponentClassName="missionTableAdapter" Name="mission" UserDataComponentName="missionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="base_Donné_deplacementConnectionString (Settings)" DbObjectName="mission" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT type_mession, DESTINATION, date_depart, date_retour, Transport FROM mission</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="type_mession" DataSetColumn="type_mession" />
+              <Mapping SourceColumn="DESTINATION" DataSetColumn="DESTINATION" />
+              <Mapping SourceColumn="date_depart" DataSetColumn="date_depart" />
+              <Mapping SourceColumn="date_retour" DataSetColumn="date_retour" />
+              <Mapping SourceColumn="Transport" DataSetColumn="Transport" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PersonneTableAdapter" GeneratorDataComponentClassName="PersonneTableAdapter" Name="Personne" UserDataComponentName="PersonneTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="base_Donné_deplacementConnectionString (Settings)" DbObjectName="Personne" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Nom, CIN, RIB FROM Personne</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Nom" DataSetColumn="Nom" />
+              <Mapping SourceColumn="CIN" DataSetColumn="CIN" />
+              <Mapping SourceColumn="RIB" DataSetColumn="RIB" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="_base_Donné_deplacementDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_base_Donné_deplacementDataSet" msprop:Generator_UserDSName="_base_Donné_deplacementDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="GRADE" msprop:Generator_TableClassName="GRADEDataTable" msprop:Generator_TableVarName="tableGRADE" msprop:Generator_TablePropName="GRADE" msprop:Generator_RowDeletingName="GRADERowDeleting" msprop:Generator_RowChangingName="GRADERowChanging" msprop:Generator_RowEvHandlerName="GRADERowChangeEventHandler" msprop:Generator_RowDeletedName="GRADERowDeleted" msprop:Generator_UserTableName="GRADE" msprop:Generator_RowChangedName="GRADERowChanged" msprop:Generator_RowEvArgName="GRADERowChangeEvent" msprop:Generator_RowClassName="GRADERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="type" msprop:Generator_ColumnVarNameInTable="columntype" msprop:Generator_ColumnPropNameInRow="type" msprop:Generator_ColumnPropNameInTable="typeColumn" msprop:Generator_UserColumnName="type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Taux" msprop:Generator_ColumnVarNameInTable="columnTaux" msprop:Generator_ColumnPropNameInRow="Taux" msprop:Generator_ColumnPropNameInTable="TauxColumn" msprop:Generator_UserColumnName="Taux" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="mission" msprop:Generator_TableClassName="missionDataTable" msprop:Generator_TableVarName="tablemission" msprop:Generator_TablePropName="mission" msprop:Generator_RowDeletingName="missionRowDeleting" msprop:Generator_RowChangingName="missionRowChanging" msprop:Generator_RowEvHandlerName="missionRowChangeEventHandler" msprop:Generator_RowDeletedName="missionRowDeleted" msprop:Generator_UserTableName="mission" msprop:Generator_RowChangedName="missionRowChanged" msprop:Generator_RowEvArgName="missionRowChangeEvent" msprop:Generator_RowClassName="missionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="type_mession" msprop:Generator_ColumnVarNameInTable="columntype_mession" msprop:Generator_ColumnPropNameInRow="type_mession" msprop:Generator_ColumnPropNameInTable="type_messionColumn" msprop:Generator_UserColumnName="type_mession" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESTINATION" msprop:Generator_ColumnVarNameInTable="columnDESTINATION" msprop:Generator_ColumnPropNameInRow="DESTINATION" msprop:Generator_ColumnPropNameInTable="DESTINATIONColumn" msprop:Generator_UserColumnName="DESTINATION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="date_depart" msprop:Generator_ColumnVarNameInTable="columndate_depart" msprop:Generator_ColumnPropNameInRow="date_depart" msprop:Generator_ColumnPropNameInTable="date_departColumn" msprop:Generator_UserColumnName="date_depart" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="date_retour" msprop:Generator_ColumnVarNameInTable="columndate_retour" msprop:Generator_ColumnPropNameInRow="date_retour" msprop:Generator_ColumnPropNameInTable="date_retourColumn" msprop:Generator_UserColumnName="date_retour" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Transport" msprop:Generator_ColumnVarNameInTable="columnTransport" msprop:Generator_ColumnPropNameInRow="Transport" msprop:Generator_ColumnPropNameInTable="TransportColumn" msprop:Generator_UserColumnName="Transport" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Personne" msprop:Generator_TableClassName="PersonneDataTable" msprop:Generator_TableVarName="tablePersonne" msprop:Generator_TablePropName="Personne" msprop:Generator_RowDeletingName="PersonneRowDeleting" msprop:Generator_RowChangingName="PersonneRowChanging" msprop:Generator_RowEvHandlerName="PersonneRowChangeEventHandler" msprop:Generator_RowDeletedName="PersonneRowDeleted" msprop:Generator_UserTableName="Personne" msprop:Generator_RowChangedName="PersonneRowChanged" msprop:Generator_RowEvArgName="PersonneRowChangeEvent" msprop:Generator_RowClassName="PersonneRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_UserColumnName="Nom" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CIN" msprop:Generator_ColumnVarNameInTable="columnCIN" msprop:Generator_ColumnPropNameInRow="CIN" msprop:Generator_ColumnPropNameInTable="CINColumn" msprop:Generator_UserColumnName="CIN" type="xs:int" minOccurs="0" />
+              <xs:element name="RIB" msprop:Generator_ColumnVarNameInTable="columnRIB" msprop:Generator_ColumnPropNameInRow="RIB" msprop:Generator_ColumnPropNameInTable="RIBColumn" msprop:Generator_UserColumnName="RIB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

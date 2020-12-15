@@ -23,8 +23,8 @@ namespace simpleDatabase7
         string   _type_mession;
         string _destination   ;
         string _transport     ;
-        DateTime _date_depart ;
-        DateTime _date_retour;
+       public DateTime _date_depart ;
+       public DateTime _date_retour;
         public Rdlc_all_deplacement(string PersoneNome, string PersoneValue, string gradeNome, string gradeValue, string type_mession, string destination, string transport, DateTime date_depart, DateTime date_retour)
 
         {
@@ -106,7 +106,7 @@ namespace simpleDatabase7
         {
             string AMPM = "";
            
-                if (date.Value.Hour > 12 && date.Value.Hour < 16)
+                if (date.Value.Hour > 12 && date.Value.Hour <= 16)
                 {
                     AMPM = " بعد الزوال ";
 
@@ -125,11 +125,15 @@ namespace simpleDatabase7
            return AMPM;
         }
 
+
+        public static int allday = 0;
+
         public static int GetLocaleTaux(DateTime? d1 , DateTime? d2)
         {
             int q = 0;
 
-           
+            //int s = day1;
+
             //if((d1.Value.Hour >=11 && d1.Value.Hour <= 14)|| (d2.Value.Hour >= 11 && d2.Value.Hour <= 14))
             //{
             //    q++;
@@ -139,24 +143,110 @@ namespace simpleDatabase7
             //    q++;
             //}
 
-            if ((d1.Value.Hour<=11 && d2.Value.Hour>=11) || (d1.Value.Hour <=12 && d2.Value.Hour >=12)|| (d1.Value.Hour <=13 && d2.Value.Hour >=13)|| (d1.Value.Hour <=14 && d2.Value.Hour >=14))
+            allday =  d2.Value.Day - d1.Value.Day;
+
+
+
+            if (allday == 0)
             {
-                q++;
+                if ((d1.Value.Hour <= 11 && d2.Value.Hour >= 11) || (d1.Value.Hour <= 12 && d2.Value.Hour >= 12) || (d1.Value.Hour <= 13 && d2.Value.Hour >= 13) || (d1.Value.Hour <= 14 && d2.Value.Hour >= 14))
+                {
+                    q++;
+                }
+                if ((d1.Value.Hour <= 18 && d2.Value.Hour >= 18) || (d1.Value.Hour <= 19 && d2.Value.Hour >= 19) || (d1.Value.Hour <= 20 && d2.Value.Hour >= 20) || (d1.Value.Hour <= 21 && d2.Value.Hour >= 21))
+                {
+                    q++;
+                }
+
+
             }
-            if ((d1.Value.Hour <= 18 && d2.Value.Hour >= 18) || (d1.Value.Hour <= 19 && d2.Value.Hour >= 19) || (d1.Value.Hour <= 20 && d2.Value.Hour >= 20) || (d1.Value.Hour <= 21 && d2.Value.Hour >= 21))
+
+            //
+
+            else if (allday == 1)
+
+
             {
+
+                //day1
+
                 q++;
+
+                if ((d1.Value.Hour <= 11) || (d1.Value.Hour <= 12) || (d1.Value.Hour <= 13) || (d1.Value.Hour <= 14))
+                {
+                    q++;
+                }
+                if ((d1.Value.Hour <= 18) || (d1.Value.Hour <= 19) || (d1.Value.Hour <= 20) || (d1.Value.Hour <= 21))
+                {
+                    q++;
+                }
+
+                //day2
+
+
+                if ((d2.Value.Hour >= 11) || (d2.Value.Hour >= 12) || (d2.Value.Hour >= 13) || (d2.Value.Hour >= 14))
+                {
+                    q++;
+                }
+                if ((d2.Value.Hour >= 18) || (d2.Value.Hour >= 19) || (d2.Value.Hour >= 20) || (d2.Value.Hour >= 21))
+                {
+                    q++;
+                }
+
+                //end_day2
+
             }
-            if ((d1.Value.Hour+1 <= 23 && d2.Value.Hour+1 >= 23) || (d1.Value.Hour <= 1 && d2.Value.Hour >= 1) || (d1.Value.Hour <= 2 && d2.Value.Hour >= 2) || (d1.Value.Hour <= 3 && d2.Value.Hour >= 3) || (d1.Value.Hour <= 4 && d2.Value.Hour >= 4) || (d1.Value.Hour <= 5 && d2.Value.Hour >= 5))
+            else if (allday > 1)
+
             {
+
+                //first_day
                 q++;
+
+                if ((d1.Value.Hour <= 11) || (d1.Value.Hour <= 12) || (d1.Value.Hour <= 13) || (d1.Value.Hour <= 14))
+                {
+                    q++;
+                }
+                if ((d1.Value.Hour <= 18) || (d1.Value.Hour <= 19) || (d1.Value.Hour <= 20) || (d1.Value.Hour <= 21))
+                {
+                    q++;
+                }
+
+                //last_day
+
+
+                if ((d2.Value.Hour >= 11) || (d2.Value.Hour >= 12) || (d2.Value.Hour >= 13) || (d2.Value.Hour >= 14))
+                {
+                    q++;
+                }
+                if ((d2.Value.Hour >= 18) || (d2.Value.Hour >= 19) || (d2.Value.Hour >= 20) || (d2.Value.Hour >= 21))
+                {
+                    q++;
+                }
+
+                //day_begin
+                for(int i = 1; i < allday; i++)
+                {
+                    q+=3;
+                }
+
             }
+            else
+            {
+                return q=-1;
+            }
+
+
+           
+
+
+
 
             return q;
             
         }
 
-
+        
         private void Rdlc_all_deplacement_Load(object sender, EventArgs e)
         {
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
@@ -214,44 +304,77 @@ namespace simpleDatabase7
                 
             this.reportViewer1.RefreshReport();
 
-            //int s = 0;
+            
             //TimeSpan difference = _date_retour - _date_depart;
             //var days = difference.TotalDays;
-            //s = System.Convert.ToInt32(System.Math.Floor(days));
-            //MessageBox.Show(s.ToString());
-            MessageBox.Show(GetLocaleTaux(_date_depart, _date_retour).ToString());
+            //day1 = System.Convert.ToInt32(System.Math.Floor(days));
+            //MessageBox.Show("day ...."+ allday.ToString());
+            MessageBox.Show("taux ...."+GetLocaleTaux(_date_depart, _date_retour).ToString());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (save == false)
+            {
+            if (MessageBox.Show("sauvegarder les modifications ?  ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                    Savedata();
+                    this.Close();
+                }
+               
+
+                
+
+            }
+                this.Close();
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
 
         }
+        bool save = false;
 
+        public void Savedata()
+        {
+            if (save == false)
+            {
+            if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
+
+            using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO mission ([id_person],[id_grade],[type_mession],[DESTINATION],[date_depart],[date_retour],[Transport]) VALUES (?,?,?,?,?,?,?)", Program.sql_con))
+            {
+
+
+
+                insertCommand.Parameters.AddWithValue("@id_person", _PersoneValue);
+                insertCommand.Parameters.AddWithValue("@id_grade", _gradeValue);
+                insertCommand.Parameters.AddWithValue("@type_mession", _type_mession);
+                insertCommand.Parameters.AddWithValue("@DESTINATION", _destination);
+                insertCommand.Parameters.AddWithValue("@date_depart", _date_depart);
+                insertCommand.Parameters.AddWithValue("@date_retour", _date_retour);
+
+                insertCommand.Parameters.AddWithValue("@Transport", _transport);
+                //    string ss = GetLocaleTaux(_date_depart, _date_retour).ToString();
+                //insertCommand.Parameters.AddWithValue("@Taux", ss) ;
+
+
+
+
+
+                    insertCommand.ExecuteNonQuery();
+                    MessageBox.Show("good");
+            }
+
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            //    if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
-            //    Program.sql_cmd = new OleDbCommand("SELECT * from Personne where id =  '" + FACTURE + "'", Program.sql_con);
-            //    Program.db = Program.sql_cmd.ExecuteReader();
-            //    if (Program.db.HasRows)
-            //    {
-
-            //        MessageBox.Show("ODM déjà ajouter");
-            //    }
-            //using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO TABLE1 ([NAME],[SURNAME]) VALUES (?,?)", connection))
-            //{
 
 
-
-            //    insertCommand.Parameters.AddWithValue("@NAME", "Brad");
-            //    insertCommand.Parameters.AddWithValue("@SURNAME", "Pitt");
-
-            //    insertCommand.ExecuteNonQuery();
-            //}
+            Savedata();
+                save = true;
+                
+            
         }
     }
 }

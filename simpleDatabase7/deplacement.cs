@@ -29,6 +29,11 @@ namespace simpleDatabase7
 
         private void deplacement_Load(object sender, EventArgs e)
         {
+            datePicker1.CustomFormat = "yyyy-MM-dd | HH:mm";
+            datePicker2.CustomFormat = "yyyy-MM-dd | HH:mm";
+
+
+
             ExecuteQueryPersonne();
             ExecuteQuerygrade();
 
@@ -103,16 +108,21 @@ namespace simpleDatabase7
         {
 
             //if (comboBox1.SelectedIndex!=-1 || comboBox2.SelectedIndex!=-1)
-            
-               
+
+
             //    {
             //        this.Alert(" sélectionnez la ligne à mettre à jour", Form_Alert.enmType.Warning);
             //    }
             //    else
             //    {
 
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || comboBox1.SelectedIndex == -1||  comboBox2.SelectedIndex == -1)
+            {
+                this.Alert("sélectionnez la ligne à mettre à jour", Form_Alert.enmType.Error);
+            }
+            else
+            {
 
-                        
                         string PersoneNome = comboBox1.Text;
                         string gradeNome = comboBox2.Text;
                         string PersoneValue = comboBox1.SelectedValue.ToString();
@@ -121,14 +131,21 @@ namespace simpleDatabase7
                         string type_mession = textBox1.Text;
                         string destination = textBox2.Text;
                         string transport = textBox3.Text;
-
-                        DateTime date_depart = Convert.ToDateTime(dateTimePicker1.Value.ToString());
-                        DateTime date_retour = Convert.ToDateTime(dateTimePicker2.Value.ToString());
-
                        
 
-                        Rdlc_all_deplacement deplacement = new Rdlc_all_deplacement(PersoneNome, PersoneValue, gradeNome, gradeValue, type_mession, destination, transport, date_depart,date_retour);
-                        deplacement.ShowDialog();
+                DateTime date_depart = Convert.ToDateTime(datePicker1.Value.ToString());
+
+                DateTime date_retour = Convert.ToDateTime(datePicker2.Value.ToString());
+
+
+
+                Rdlc_all_deplacement deplacement = new Rdlc_all_deplacement(PersoneNome, PersoneValue, gradeNome, gradeValue, type_mession, destination, transport, date_depart, date_retour);
+                deplacement.ShowDialog();
+                textBox1.Text = ""; textBox2.Text = ""; textBox3.Text = ""; comboBox1.SelectedIndex = -1; comboBox2.SelectedIndex = -1;
+
+               
+
+            }
                         
                         
                         
