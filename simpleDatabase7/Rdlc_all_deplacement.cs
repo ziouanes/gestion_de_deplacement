@@ -132,16 +132,6 @@ namespace simpleDatabase7
         {
             int q = 0;
 
-            //int s = day1;
-
-            //if((d1.Value.Hour >=11 && d1.Value.Hour <= 14)|| (d2.Value.Hour >= 11 && d2.Value.Hour <= 14))
-            //{
-            //    q++;
-            //} 
-            //if((d1.Value.Hour >= 18 && d1.Value.Hour <= 21)|| (d2.Value.Hour >= 18 && d2.Value.Hour <= 21))
-            //{
-            //    q++;
-            //}
 
             allday =  d2.Value.Day - d1.Value.Day;
 
