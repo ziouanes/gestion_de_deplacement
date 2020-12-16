@@ -19,7 +19,7 @@ namespace simpleDatabase7
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new acceulle());
-            Application.Run(new deplacement());
+            Application.Run(new Etat_des_sommes_dues());
         }
 
         static string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);

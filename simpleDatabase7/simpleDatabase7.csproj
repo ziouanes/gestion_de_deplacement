@@ -122,6 +122,12 @@
       <DependentUpon>deplacement.cs</DependentUpon>
     </Compile>
     <Compile Include="DGVPrinter.cs" />
+    <Compile Include="Etat des sommes dues.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Etat des sommes dues.Designer.cs">
+      <DependentUpon>Etat des sommes dues.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Alert.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,10 +184,18 @@
     <Compile Include="vehicules.Designer.cs">
       <DependentUpon>vehicules.cs</DependentUpon>
     </Compile>
+    <Compile Include="_base_Donné_deplacementDataSet.cs">
+      <DependentUpon>_base_Donné_deplacementDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="_base_Donné_deplacementDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_base_Donné_deplacementDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_base_Donné_deplacementDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_base_Donné_deplacementDataSet1.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="acceulle.resx">
       <DependentUpon>acceulle.cs</DependentUpon>
@@ -191,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="deplacement.resx">
       <DependentUpon>deplacement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Etat des sommes dues.resx">
+      <DependentUpon>Etat des sommes dues.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Alert.resx">
       <DependentUpon>Form_Alert.cs</DependentUpon>
@@ -224,6 +241,11 @@
       <DependentUpon>vehicules.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\simpleDatabase7._base_Donné_deplacementDataSet1TableAdapters.GRADETableAdapter.datasource" />
+    <None Include="Properties\DataSources\simpleDatabase7._base_Donné_deplacementDataSet1TableAdapters.missionTableAdapter.datasource" />
+    <None Include="Properties\DataSources\simpleDatabase7._base_Donné_deplacementDataSet1TableAdapters.PersonneTableAdapter.datasource" />
+    <None Include="Properties\DataSources\simpleDatabase7._base_Donné_deplacementDataSet1TableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\simpleDatabase7._base_Donné_deplacementDataSet1TableAdapters.TableAdapterManager.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -243,6 +265,17 @@
     </None>
     <None Include="_base_Donné_deplacementDataSet.xss">
       <DependentUpon>_base_Donné_deplacementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_base_Donné_deplacementDataSet1.xsc">
+      <DependentUpon>_base_Donné_deplacementDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="_base_Donné_deplacementDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_base_Donné_deplacementDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_base_Donné_deplacementDataSet1.xss">
+      <DependentUpon>_base_Donné_deplacementDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
