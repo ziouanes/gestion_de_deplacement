@@ -16,5 +16,10 @@ namespace simpleDatabase7
         {
             InitializeComponent();
         }
+
+        private void Person_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

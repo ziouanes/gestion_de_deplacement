@@ -222,6 +222,7 @@
             this.Name = "Person";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Person";
+            this.Load += new System.EventHandler(this.Person_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -57,6 +57,32 @@
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1.Extensions, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
@@ -146,6 +172,8 @@
     <Compile Include="Grade.Designer.cs">
       <DependentUpon>Grade.cs</DependentUpon>
     </Compile>
+    <Compile Include="mession.cs" />
+    <Compile Include="People.cs" />
     <Compile Include="Person.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +193,12 @@
     <Compile Include="Rdlc_all_deplacement.Designer.cs">
       <DependentUpon>Rdlc_all_deplacement.cs</DependentUpon>
     </Compile>
+    <Compile Include="somme_due_Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="somme_due_Report.Designer.cs">
+      <DependentUpon>somme_due_Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Update_grade.cs">
       <SubType>Form</SubType>
@@ -183,19 +217,6 @@
     </Compile>
     <Compile Include="vehicules.Designer.cs">
       <DependentUpon>vehicules.cs</DependentUpon>
-    </Compile>
-    <Compile Include="_base_Donné_deplacementDataSet.cs">
-      <DependentUpon>_base_Donné_deplacementDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="_base_Donné_deplacementDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_base_Donné_deplacementDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="_base_Donné_deplacementDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_base_Donné_deplacementDataSet1.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="acceulle.resx">
       <DependentUpon>acceulle.cs</DependentUpon>
@@ -221,6 +242,7 @@
     <EmbeddedResource Include="Person.resx">
       <DependentUpon>Person.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -231,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportMession.rdlc" />
     <EmbeddedResource Include="Report_all.rdlc" />
+    <EmbeddedResource Include="somme_due_Report.resx">
+      <DependentUpon>somme_due_Report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Update_grade.resx">
       <DependentUpon>Update_grade.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,6 +266,8 @@
       <DependentUpon>vehicules.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\mession.datasource" />
+    <None Include="Properties\DataSources\People.datasource" />
     <None Include="Properties\DataSources\simpleDatabase7._base_Donné_deplacementDataSet1TableAdapters.GRADETableAdapter.datasource" />
     <None Include="Properties\DataSources\simpleDatabase7._base_Donné_deplacementDataSet1TableAdapters.missionTableAdapter.datasource" />
     <None Include="Properties\DataSources\simpleDatabase7._base_Donné_deplacementDataSet1TableAdapters.PersonneTableAdapter.datasource" />
@@ -255,28 +282,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="_base_Donné_deplacementDataSet.xsc">
-      <DependentUpon>_base_Donné_deplacementDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="_base_Donné_deplacementDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>_base_Donné_deplacementDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_base_Donné_deplacementDataSet.xss">
-      <DependentUpon>_base_Donné_deplacementDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="_base_Donné_deplacementDataSet1.xsc">
-      <DependentUpon>_base_Donné_deplacementDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="_base_Donné_deplacementDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>_base_Donné_deplacementDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_base_Donné_deplacementDataSet1.xss">
-      <DependentUpon>_base_Donné_deplacementDataSet1.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -297,9 +302,6 @@
     <None Include="Resources\warning.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="base_Donné-deplacement.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="icons8_data_sheet.ico" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

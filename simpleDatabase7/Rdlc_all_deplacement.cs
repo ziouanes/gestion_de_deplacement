@@ -149,6 +149,8 @@ namespace simpleDatabase7
                 }
 
 
+
+
             }
 
             //
@@ -239,6 +241,20 @@ namespace simpleDatabase7
         
         private void Rdlc_all_deplacement_Load(object sender, EventArgs e)
         {
+            TimeSpan difference = _date_retour - _date_depart;
+            var days = difference.TotalDays;
+            int day1 = System.Convert.ToInt32(System.Math.Floor(days));
+           //MessageBox.Show("day ...." + day1.ToString());
+            MessageBox.Show("taux ...." + GetLocaleTaux(_date_depart, _date_retour).ToString());
+
+            if (day1 < 0 || GetLocaleTaux(_date_depart, _date_retour)==0)
+            {
+                MessageBox.Show("Error date deferent", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
+            else
+            {
+
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
             
             
@@ -294,12 +310,13 @@ namespace simpleDatabase7
                 
             this.reportViewer1.RefreshReport();
 
+
+            }
+
+
+
             
-            //TimeSpan difference = _date_retour - _date_depart;
-            //var days = difference.TotalDays;
-            //day1 = System.Convert.ToInt32(System.Math.Floor(days));
-            //MessageBox.Show("day ...."+ allday.ToString());
-            MessageBox.Show("taux ...."+GetLocaleTaux(_date_depart, _date_retour).ToString());
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -365,6 +382,11 @@ namespace simpleDatabase7
                 save = true;
                 
             
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

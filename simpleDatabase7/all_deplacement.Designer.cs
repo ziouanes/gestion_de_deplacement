@@ -29,20 +29,49 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(all_deplacement));
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.peopleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.peopleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.Afficher_invoice = new DevExpress.XtraEditors.SimpleButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.peopleBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.messionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltype = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTaux = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTaux_Fix = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNom = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltype_mession = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDESTINATION = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldate_depart = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldate_retour = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldate_depart_H = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldate_retour_H = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.messionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuDragControl1
@@ -52,168 +81,289 @@
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // button2
+            // peopleBindingSource
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.BackColor = System.Drawing.Color.SteelBlue;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(595, 421);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 31);
-            this.button2.TabIndex = 190;
-            this.button2.Text = "Afficher All";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.peopleBindingSource.DataSource = typeof(simpleDatabase7.People);
             // 
-            // button1
+            // peopleBindingSource1
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.SeaGreen;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(277, 414);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 38);
-            this.button1.TabIndex = 188;
-            this.button1.Text = "Afficher";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.peopleBindingSource1.DataSource = typeof(simpleDatabase7.People);
             // 
-            // panel2
+            // layoutControl1
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 10);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 458);
-            this.panel2.TabIndex = 179;
+            this.layoutControl1.Controls.Add(this.Afficher_invoice);
+            this.layoutControl1.Controls.Add(this.comboBox1);
+            this.layoutControl1.Controls.Add(this.gridControl1);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.Root;
+            this.layoutControl1.Size = new System.Drawing.Size(1009, 590);
+            this.layoutControl1.TabIndex = 194;
+            this.layoutControl1.Text = "layoutControl1";
             // 
-            // panel3
+            // Afficher_invoice
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(714, 10);
-            this.panel3.TabIndex = 180;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(714, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 468);
-            this.panel4.TabIndex = 181;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 468);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(724, 10);
-            this.panel1.TabIndex = 182;
+            this.Afficher_invoice.Appearance.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Afficher_invoice.Appearance.Options.UseFont = true;
+            this.Afficher_invoice.Location = new System.Drawing.Point(830, 12);
+            this.Afficher_invoice.Name = "Afficher_invoice";
+            this.Afficher_invoice.Size = new System.Drawing.Size(167, 25);
+            this.Afficher_invoice.StyleController = this.layoutControl1;
+            this.Afficher_invoice.TabIndex = 8;
+            this.Afficher_invoice.Text = "Afficher";
+            this.Afficher_invoice.Click += new System.EventHandler(this.Afficher_invoice_Click);
             // 
             // comboBox1
             // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(217, 121);
+            this.comboBox1.Location = new System.Drawing.Point(79, 12);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(254, 30);
-            this.comboBox1.TabIndex = 192;
+            this.comboBox1.Size = new System.Drawing.Size(279, 29);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
-            // label5
+            // gridControl1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(488, 121);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 25);
-            this.label5.TabIndex = 191;
-            this.label5.Text = "السيـــد";
+            this.gridControl1.DataSource = this.messionBindingSource;
+            this.gridControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridControl1.Location = new System.Drawing.Point(12, 42);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(985, 510);
+            this.gridControl1.TabIndex = 6;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
             // 
-            // label4
+            // gridView1
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.Control;
-            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(307, 42);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 30);
-            this.label4.TabIndex = 193;
-            this.label4.Text = "أمر بمــهمة";
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid,
+            this.coltype,
+            this.colTaux,
+            this.colTaux_Fix,
+            this.colNom,
+            this.coltype_mession,
+            this.colDESTINATION,
+            this.coldate_depart,
+            this.coldate_retour,
+            this.coldate_depart_H,
+            this.coldate_retour_H});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
             // 
-            // dataGridView1
+            // Root
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 215);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(666, 170);
-            this.dataGridView1.TabIndex = 194;
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem3,
+            this.emptySpaceItem1,
+            this.layoutControlItem2,
+            this.emptySpaceItem2,
+            this.layoutControlItem4});
+            this.Root.Name = "Root";
+            this.Root.Size = new System.Drawing.Size(1009, 590);
+            this.Root.TextVisible = false;
             // 
-            // button4
+            // layoutControlItem3
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.BackColor = System.Drawing.Color.DarkGray;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(669, 10);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(45, 39);
-            this.button4.TabIndex = 189;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.layoutControlItem3.Control = this.gridControl1;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 30);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(989, 514);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 544);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(989, 26);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem2.Control = this.comboBox1;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(350, 30);
+            this.layoutControlItem2.Text = "Nom : ";
+            this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(64, 26);
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(350, 0);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(468, 30);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.Afficher_invoice;
+            this.layoutControlItem4.Location = new System.Drawing.Point(818, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(171, 30);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
+            // peopleBindingSource2
+            // 
+            this.peopleBindingSource2.DataSource = typeof(simpleDatabase7.People);
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 0);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(0, 0);
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // messionBindingSource
+            // 
+            this.messionBindingSource.DataSource = typeof(simpleDatabase7.mession);
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            this.colid.Visible = true;
+            this.colid.VisibleIndex = 0;
+            // 
+            // coltype
+            // 
+            this.coltype.FieldName = "type";
+            this.coltype.Name = "coltype";
+            this.coltype.Visible = true;
+            this.coltype.VisibleIndex = 1;
+            // 
+            // colTaux
+            // 
+            this.colTaux.FieldName = "Taux";
+            this.colTaux.Name = "colTaux";
+            this.colTaux.Visible = true;
+            this.colTaux.VisibleIndex = 2;
+            // 
+            // colTaux_Fix
+            // 
+            this.colTaux_Fix.FieldName = "Taux_Fix";
+            this.colTaux_Fix.Name = "colTaux_Fix";
+            this.colTaux_Fix.Visible = true;
+            this.colTaux_Fix.VisibleIndex = 3;
+            // 
+            // colNom
+            // 
+            this.colNom.FieldName = "Nom";
+            this.colNom.Name = "colNom";
+            this.colNom.Visible = true;
+            this.colNom.VisibleIndex = 4;
+            // 
+            // coltype_mession
+            // 
+            this.coltype_mession.FieldName = "type_mession";
+            this.coltype_mession.Name = "coltype_mession";
+            this.coltype_mession.Visible = true;
+            this.coltype_mession.VisibleIndex = 5;
+            // 
+            // colDESTINATION
+            // 
+            this.colDESTINATION.FieldName = "DESTINATION";
+            this.colDESTINATION.Name = "colDESTINATION";
+            this.colDESTINATION.Visible = true;
+            this.colDESTINATION.VisibleIndex = 6;
+            // 
+            // coldate_depart
+            // 
+            this.coldate_depart.FieldName = "date_depart";
+            this.coldate_depart.Name = "coldate_depart";
+            this.coldate_depart.Visible = true;
+            this.coldate_depart.VisibleIndex = 7;
+            // 
+            // coldate_retour
+            // 
+            this.coldate_retour.FieldName = "date_retour";
+            this.coldate_retour.Name = "coldate_retour";
+            this.coldate_retour.Visible = true;
+            this.coldate_retour.VisibleIndex = 8;
+            // 
+            // coldate_depart_H
+            // 
+            this.coldate_depart_H.FieldName = "date_depart_H";
+            this.coldate_depart_H.Name = "coldate_depart_H";
+            this.coldate_depart_H.Visible = true;
+            this.coldate_depart_H.VisibleIndex = 9;
+            // 
+            // coldate_retour_H
+            // 
+            this.coldate_retour_H.FieldName = "date_retour_H";
+            this.coldate_retour_H.Name = "coldate_retour_H";
+            this.coldate_retour_H.Visible = true;
+            this.coldate_retour_H.VisibleIndex = 10;
             // 
             // all_deplacement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 478);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.ClientSize = new System.Drawing.Size(1009, 590);
+            this.Controls.Add(this.layoutControl1);
             this.Name = "all_deplacement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "all_deplacement";
             this.Load += new System.EventHandler(this.all_deplacement_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.messionBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.BindingSource peopleBindingSource;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraLayout.LayoutControlGroup Root;
+        private System.Windows.Forms.BindingSource peopleBindingSource1;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private System.Windows.Forms.BindingSource peopleBindingSource2;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
+        private DevExpress.XtraEditors.SimpleButton Afficher_invoice;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private System.Windows.Forms.BindingSource messionBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn coltype;
+        private DevExpress.XtraGrid.Columns.GridColumn colTaux;
+        private DevExpress.XtraGrid.Columns.GridColumn colTaux_Fix;
+        private DevExpress.XtraGrid.Columns.GridColumn colNom;
+        private DevExpress.XtraGrid.Columns.GridColumn coltype_mession;
+        private DevExpress.XtraGrid.Columns.GridColumn colDESTINATION;
+        private DevExpress.XtraGrid.Columns.GridColumn coldate_depart;
+        private DevExpress.XtraGrid.Columns.GridColumn coldate_retour;
+        private DevExpress.XtraGrid.Columns.GridColumn coldate_depart_H;
+        private DevExpress.XtraGrid.Columns.GridColumn coldate_retour_H;
     }
 }
