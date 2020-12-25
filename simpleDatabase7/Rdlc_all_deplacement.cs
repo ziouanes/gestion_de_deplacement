@@ -38,8 +38,8 @@ namespace simpleDatabase7
            _type_mession =  type_mession;
            _destination  =  destination;
            _transport     =  transport;
-        _date_depart =  date_depart;
-        _date_retour = date_retour;
+           _date_depart =  date_depart;
+           _date_retour = date_retour;
         }
 
         public static string GetLocaleTime(DateTime? date)
@@ -348,7 +348,7 @@ namespace simpleDatabase7
             {
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
-            using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO mission ([id_person],[id_grade],[type_mession],[DESTINATION],[date_depart],[date_retour],[Transport]) VALUES (?,?,?,?,?,?,?)", Program.sql_con))
+            using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO mission ([id_person],[id_grade],[type_mession],[DESTINATION],[date_depart],[date_retour],[Transport],[nbr_Taux]) VALUES (?,?,?,?,?,?,?,?)", Program.sql_con))
             {
 
 
@@ -361,8 +361,8 @@ namespace simpleDatabase7
                 insertCommand.Parameters.AddWithValue("@date_retour", _date_retour);
 
                 insertCommand.Parameters.AddWithValue("@Transport", _transport);
-                //    string ss = GetLocaleTaux(_date_depart, _date_retour).ToString();
-                //insertCommand.Parameters.AddWithValue("@Taux", ss) ;
+                    //string ss = GetLocaleTaux(_date_depart, _date_retour).ToString();
+                insertCommand.Parameters.AddWithValue("@nbr_Taux", GetLocaleTaux(_date_depart, _date_retour)) ;
 
 
 
@@ -377,9 +377,10 @@ namespace simpleDatabase7
         private void button1_Click(object sender, EventArgs e)
         {
 
-
             Savedata();
-                save = true;
+
+            save = true;
+            
                 
             
         }

@@ -133,5 +133,11 @@ namespace simpleDatabase7
 
             Program.sql_con.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Grade grade = new Grade();
+            grade.ShowDialog();
+        }
     }
 }

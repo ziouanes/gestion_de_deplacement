@@ -328,8 +328,9 @@ namespace simpleDatabase7
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Grade gd = new Grade();
+            Update_grade gd = new Update_grade();
             gd.ShowDialog();
+
         }
 
         private void button5_Click(object sender, EventArgs e)
