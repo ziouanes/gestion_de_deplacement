@@ -25,7 +25,7 @@ namespace simpleDatabase7
 
         static string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         //public static OleDbConnection sql_con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + filePath + " \base_Donné-deplacement.accdb");
-         public static OleDbConnection sql_con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\android-00\Documents\base_Donné-deplacement.accdb");
+         public static OleDbConnection sql_con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + filePath + "/base_Donné-deplacement.accdb");
 
 
 

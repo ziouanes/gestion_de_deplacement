@@ -45,12 +45,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(163, 243);
+            this.textBox4.Location = new System.Drawing.Point(158, 245);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(318, 33);
             this.textBox4.TabIndex = 192;
@@ -59,11 +61,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(84, 243);
+            this.label1.Location = new System.Drawing.Point(86, 248);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 25);
             this.label1.TabIndex = 191;
             this.label1.Text = "Rib :";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // bunifuDragControl1
             // 
@@ -80,7 +83,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(430, 301);
+            this.button2.Location = new System.Drawing.Point(371, 301);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 38);
             this.button2.TabIndex = 193;
@@ -96,7 +99,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(114, 301);
+            this.button1.Location = new System.Drawing.Point(74, 301);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(164, 38);
             this.button1.TabIndex = 189;
@@ -107,7 +110,7 @@
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(163, 187);
+            this.textBox6.Location = new System.Drawing.Point(158, 189);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(318, 33);
             this.textBox6.TabIndex = 188;
@@ -116,7 +119,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(84, 135);
+            this.label2.Location = new System.Drawing.Point(79, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 25);
             this.label2.TabIndex = 184;
@@ -126,11 +129,12 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(84, 195);
+            this.label9.Location = new System.Drawing.Point(89, 192);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 25);
             this.label9.TabIndex = 185;
             this.label9.Text = "Cin:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label4
             // 
@@ -184,7 +188,7 @@
             this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(163, 135);
+            this.comboBox1.Location = new System.Drawing.Point(158, 95);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(318, 30);
             this.comboBox1.TabIndex = 194;
@@ -205,11 +209,31 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(158, 141);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(318, 33);
+            this.textBox1.TabIndex = 196;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(45, 141);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 25);
+            this.label3.TabIndex = 195;
+            this.label3.Text = "Ar_Nom :";
+            // 
             // update_personne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 394);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label1);
@@ -250,5 +274,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
     }
 }

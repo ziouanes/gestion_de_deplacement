@@ -67,7 +67,7 @@ namespace simpleDatabase7
                 OleDbCommand cmd = Program.sql_con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 s = comboBox1.SelectedValue.ToString();
-                cmd.CommandText = "SELECT CIN ,  RIB from Personne where id_Person =" + s + "";
+                cmd.CommandText = "SELECT CIN ,  RIB , ar_Nom from Personne where id_Person =" + s + "";
                 DataTable table = new DataTable();
                 cmd.ExecuteNonQuery();
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
@@ -76,6 +76,7 @@ namespace simpleDatabase7
                 {
                     textBox6.Text = row["CIN"].ToString();
                     textBox4.Text = row["RIB"].ToString();
+                    textBox1.Text = row["ar_Nom"].ToString();
 
 
                 }
@@ -91,12 +92,14 @@ namespace simpleDatabase7
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (OleDbCommand updateCommand = new OleDbCommand("UPDATE Personne SET CIN = ?, RIB = ? WHERE id_Person = ?", Program.sql_con))
+            using (OleDbCommand updateCommand = new OleDbCommand("UPDATE Personne SET CIN = ?, ar_Nom = ? , RIB = ? WHERE id_Person = ?", Program.sql_con))
             {
                 if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
                 updateCommand.Parameters.AddWithValue("@CIN", textBox6.Text);
                 updateCommand.Parameters.AddWithValue("@RIB", textBox4.Text);
+                updateCommand.Parameters.AddWithValue("@ar_Nom", textBox1.Text);
+
                 updateCommand.Parameters.AddWithValue("@id_Person", comboBox1.SelectedValue.ToString());
 
                 updateCommand.ExecuteNonQuery();
@@ -126,6 +129,16 @@ namespace simpleDatabase7
                 MessageBox.Show("done");
                 ExecuteQuery();
             }
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
 
         }
     }

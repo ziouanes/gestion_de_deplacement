@@ -24,15 +24,15 @@ namespace simpleDatabase7
 
         private void all_deplacement_Load(object sender, EventArgs e)
         {
-            using (OleDbConnection db = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + filePath + "/base_Donné-deplacement.accdb"))
+            //using (OleDbConnection db = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + filePath + "/base_Donné-deplacement.accdb"))
 
-            {
-                if (db.State == ConnectionState.Closed)
-                    db.Open();
-                string query = $"SELECT  mission.date_depart as date_depart,mission.date_retour as date_retour , mission.DESTINATION as DESTINATION , GRADE.Taux as Taux_Fix , mission.nbr_Taux as Taux , mission.date_depart as date_depart_H , mission.date_retour as date_retour_H from(Personne  inner join mission  on  Personne.id_Person = mission.id_person) inner join GRADE on GRADE.id = mission.id_grade";
-                messionBindingSource.DataSource = db.Query<People>(query, commandType: CommandType.Text);
-            }
-            ExecuteQueryPersonne();
+            //{
+            //    if (db.State == ConnectionState.Closed)
+            //        db.Open();
+            //    string query = $"SELECT  mission.date_depart as date_depart,mission.date_retour as date_retour , mission.DESTINATION as DESTINATION , GRADE.Taux as Taux_Fix , mission.nbr_Taux as Taux , mission.date_depart as date_depart_H , mission.date_retour as date_retour_H from(Personne  inner join mission  on  Personne.id_Person = mission.id_person) inner join GRADE on GRADE.id = mission.id_grade";
+            //    messionBindingSource.DataSource = db.Query<People>(query, commandType: CommandType.Text);
+            //}
+            //ExecuteQueryPersonne();
         }
 
         //setexecutequery
