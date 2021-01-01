@@ -114,7 +114,6 @@ namespace simpleDatabase7
                 OleDbCommand cmd = Program.sql_con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 s = comboBox1.SelectedValue.ToString();
-                MessageBox.Show(s.ToString());
                 cmd.CommandText = "SELECT Taux from GRADE where id =" + s + "";
                 DataTable table = new DataTable();
                 cmd.ExecuteNonQuery();

@@ -72,7 +72,7 @@
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(203, 122);
+            this.textBox8.Location = new System.Drawing.Point(203, 124);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(234, 33);
             this.textBox8.TabIndex = 173;

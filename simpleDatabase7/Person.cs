@@ -65,7 +65,7 @@ namespace simpleDatabase7
 
                 else if (MessageBox.Show("Voulez-vous vraiment ajouter un nouveau GRADE   " + textBox8.Text + " ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    string textquery = "INSERT INTO Personne(Nom,CIN,RIB,ar_Nom)VALUES('" + textBox8.Text + "','" + textBox6.Text + "','" + textBox4.Text +"','" + textBox1.Text +"')";
+                    string textquery = "INSERT INTO Personne (Nom,CIN,RIB,ar_Nom) VALUES ('" + textBox8.Text + "','" + textBox6.Text + "','" + textBox4.Text +"','" + textBox1.Text +"')";
                     ExecuteQuery(textquery);
                     this.Alert("ajouter Personne Succès", Form_Alert.enmType.Success);
                     textBox8.Text = "";

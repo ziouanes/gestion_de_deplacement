@@ -55,14 +55,14 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1085, 27);
+            this.panel3.Size = new System.Drawing.Size(941, 27);
             this.panel3.TabIndex = 196;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(1085, 0);
+            this.panel4.Location = new System.Drawing.Point(941, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(10, 694);
             this.panel4.TabIndex = 197;
@@ -73,7 +73,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 694);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1095, 10);
+            this.panel1.Size = new System.Drawing.Size(951, 10);
             this.panel1.TabIndex = 198;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -85,7 +85,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(939, 660);
+            this.button2.Location = new System.Drawing.Point(815, 660);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 28);
             this.button2.TabIndex = 206;
@@ -106,7 +106,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(16, 33);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1061, 621);
+            this.reportViewer1.Size = new System.Drawing.Size(920, 621);
             this.reportViewer1.TabIndex = 205;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
@@ -125,7 +125,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(437, 658);
+            this.button1.Location = new System.Drawing.Point(365, 658);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(189, 32);
             this.button1.TabIndex = 207;
@@ -137,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 704);
+            this.ClientSize = new System.Drawing.Size(951, 704);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.reportViewer1);

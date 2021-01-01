@@ -54,6 +54,7 @@
     <ApplicationIcon>icons8_data_sheet.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
@@ -107,12 +108,15 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Core.1.0.112.0\lib\net46\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -140,6 +144,12 @@
     </Compile>
     <Compile Include="all_deplacement.Designer.cs">
       <DependentUpon>all_deplacement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Archive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Archive.Designer.cs">
+      <DependentUpon>Archive.cs</DependentUpon>
     </Compile>
     <Compile Include="deplacement.cs">
       <SubType>Form</SubType>
@@ -200,6 +210,12 @@
       <DependentUpon>somme_due_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="update_deplacement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update_deplacement.Designer.cs">
+      <DependentUpon>update_deplacement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Update_grade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="all_deplacement.resx">
       <DependentUpon>all_deplacement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Archive.resx">
+      <DependentUpon>Archive.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="deplacement.resx">
       <DependentUpon>deplacement.cs</DependentUpon>
@@ -252,9 +271,11 @@
       <DependentUpon>Rdlc_all_deplacement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportMession.rdlc" />
-    <EmbeddedResource Include="Report_all.rdlc" />
     <EmbeddedResource Include="somme_due_Report.resx">
       <DependentUpon>somme_due_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="update_deplacement.resx">
+      <DependentUpon>update_deplacement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Update_grade.resx">
       <DependentUpon>Update_grade.cs</DependentUpon>
@@ -303,6 +324,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8_data_sheet.ico" />
+    <None Include="Resources\cancel_48px.png" />
+    <None Include="Resources\icons8_cancel_16.png" />
+    <None Include="Resources\member_64px.png" />
+    <None Include="Resources\icons8_update_user_16.png" />
+    <None Include="Resources\icons8_print_16.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

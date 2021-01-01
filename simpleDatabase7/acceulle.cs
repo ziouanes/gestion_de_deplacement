@@ -279,6 +279,7 @@ namespace simpleDatabase7
         {
             all_deplacement all = new all_deplacement();
             all.ShowDialog();
+            all.WindowState = FormWindowState.Maximized;
 
            
 
@@ -343,6 +344,12 @@ namespace simpleDatabase7
         {
             vehicules vs = new vehicules();
             vs.ShowDialog();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Archive ar = new Archive();
+            ar.ShowDialog();
         }
     }
 }

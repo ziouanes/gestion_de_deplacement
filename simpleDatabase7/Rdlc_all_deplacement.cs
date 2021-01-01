@@ -15,6 +15,7 @@ namespace simpleDatabase7
 {
     public partial class Rdlc_all_deplacement : Form
     {
+        string _id;
         string _PersoneNome ;
         string   _gradeNome ;
         string _PersoneValue;
@@ -25,11 +26,11 @@ namespace simpleDatabase7
         string _transport     ;
        public DateTime _date_depart ;
        public DateTime _date_retour;
-        public Rdlc_all_deplacement(string PersoneNome, string PersoneValue, string gradeNome, string gradeValue, string type_mession, string destination, string transport, DateTime date_depart, DateTime date_retour)
+        public Rdlc_all_deplacement(string id,string PersoneNome, string PersoneValue, string gradeNome, string gradeValue, string type_mession, string destination, string transport, DateTime date_depart, DateTime date_retour)
 
         {
             InitializeComponent();
-
+            _id = id;
            _PersoneNome = PersoneNome;
            _gradeNome   = gradeNome;
            _PersoneValue =  PersoneValue;
@@ -245,7 +246,7 @@ namespace simpleDatabase7
             var days = difference.TotalDays;
             int day1 = System.Convert.ToInt32(System.Math.Floor(days));
            //MessageBox.Show("day ...." + day1.ToString());
-            MessageBox.Show("taux ...." + GetLocaleTaux(_date_depart, _date_retour).ToString());
+            //MessageBox.Show("taux ...." + GetLocaleTaux(_date_depart, _date_retour).ToString());
 
             if (day1 < 0 || GetLocaleTaux(_date_depart, _date_retour)==0)
             {
@@ -346,6 +347,39 @@ namespace simpleDatabase7
         {
             if (save == false)
             {
+                if (int.Parse(_id) != 0)
+                {
+
+                    if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
+
+
+                    using (OleDbCommand updateCommand = new OleDbCommand("UPDATE mission SET id_person = ? ,id_grade =? ,type_mession = ?,DESTINATION  = ? ,date_depart = ? , date_retour = ? , Transport = ?  , nbr_Taux = ?  WHERE id = ?", Program.sql_con))
+                    {
+                        if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
+
+                        updateCommand.Parameters.AddWithValue("@id_person", _PersoneValue);
+                        updateCommand.Parameters.AddWithValue("@id_grade", _gradeValue);
+                        updateCommand.Parameters.AddWithValue("@type_mession", _type_mession);
+                        updateCommand.Parameters.AddWithValue("@DESTINATION", _destination);
+                        updateCommand.Parameters.AddWithValue("@date_depart", _date_depart);
+                        updateCommand.Parameters.AddWithValue("@date_retour", _date_retour);
+                        updateCommand.Parameters.AddWithValue("@Transport", _transport);
+                        updateCommand.Parameters.AddWithValue("@nbr_Taux", GetLocaleTaux(_date_depart, _date_retour));
+                        updateCommand.Parameters.AddWithValue("@id", _id);
+
+
+                        updateCommand.ExecuteNonQuery();
+                        this.Alert("modifier Success", Form_Alert.enmType.Info);
+
+                    }
+
+                }
+                else
+                {
+
+                
+            
+
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
             using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO mission ([id_person],[id_grade],[type_mession],[DESTINATION],[date_depart],[date_retour],[Transport],[nbr_Taux]) VALUES (?,?,?,?,?,?,?,?)", Program.sql_con))
@@ -369,10 +403,16 @@ namespace simpleDatabase7
 
 
                     insertCommand.ExecuteNonQuery();
-                    MessageBox.Show("good");
-            }
+                        this.Alert("Enregistre Success", Form_Alert.enmType.Info);
+                    }
+                }
 
             }
+        }
+        public void Alert(string msg, Form_Alert.enmType type)
+        {
+            Form_Alert frm = new Form_Alert();
+            frm.showAlert(msg, type);
         }
         private void button1_Click(object sender, EventArgs e)
         {

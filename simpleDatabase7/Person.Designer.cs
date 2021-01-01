@@ -131,7 +131,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(245, 33);
+            this.label4.Location = new System.Drawing.Point(235, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 28);
             this.label4.TabIndex = 154;

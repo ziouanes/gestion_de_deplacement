@@ -63,7 +63,7 @@ namespace simpleDatabase7
 
                 else if (MessageBox.Show("Voulez-vous vraiment ajouter un nouveau GRADE   " + textBox8.Text + " ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    string textquery = "INSERT INTO GRADE(type,Taux)VALUES('" + textBox8.Text + "','" + textBox1.Text + "','" + textBox6.Text+"')";
+                    string textquery = "INSERT INTO GRADE(type,Taux,TYPE_ar)VALUES('" + textBox8.Text + "','" + textBox6.Text + "','" + textBox1.Text+"')";
                     ExecuteQuery(textquery);
                     this.Alert("ajouter Grade Succès", Form_Alert.enmType.Success);
                     textBox8.Text = "";

@@ -2,21 +2,25 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OleDb;
-
 
 namespace simpleDatabase7
 {
-    public partial class deplacement : Form
+    public partial class update_deplacement : Form
     {
-        public deplacement()
+           static string id_deplacemet = "";
+        public update_deplacement(string value)
         {
+
             InitializeComponent();
+            id_deplacemet = value;
+           
         }
 
         //alert enum
@@ -26,20 +30,45 @@ namespace simpleDatabase7
             frm.showAlert(msg, type);
         }
 
+        static string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
-        private void deplacement_Load(object sender, EventArgs e)
+        private void loadData()
+        {
+            using (OleDbConnection db = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + filePath + "/base_Donné-deplacement.accdb"))
+                if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
+            {
+                OleDbCommand cmd = Program.sql_con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT id_person ,  id_grade , type_mession,DESTINATION,date_depart,date_retour,Transport from mission where id =" + id_deplacemet + "";
+                DataTable table = new DataTable();
+                cmd.ExecuteNonQuery();
+                OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+                da.Fill(table);
+                foreach (DataRow row in table.Rows)
+                {
+                    comboBox1.SelectedValue = row["id_person"].ToString();
+                    comboBox2.SelectedValue = row["id_grade"].ToString();
+                    textBox1.Text = row["type_mession"].ToString();
+
+                    textBox2.Text = row["DESTINATION"].ToString();
+                    textBox3.Text = row["Transport"].ToString();
+                    datePicker1.Value = (DateTime)row["date_depart"];
+                    datePicker2.Value = (DateTime)row["date_retour"];
+                    
+
+                }
+
+            }
+               // MessageBox.Show(id_deplacemet);
+        }
+            private void update_deplacement_Load(object sender, EventArgs e)
         {
             datePicker1.CustomFormat = "yyyy-MM-dd | HH:mm";
             datePicker2.CustomFormat = "yyyy-MM-dd | HH:mm";
-
-
-
             ExecuteQueryPersonne();
             ExecuteQuerygrade();
-
+            loadData();
         }
-
-        //setexecutequery
         private void ExecuteQuerygrade()
         {
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
@@ -62,8 +91,6 @@ namespace simpleDatabase7
             comboBox2.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBox2.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
-
-        //setexecutequery
         private void ExecuteQueryPersonne()
         {
 
@@ -80,58 +107,37 @@ namespace simpleDatabase7
             comboBox1.ValueMember = "id_Person";
             comboBox1.DisplayMember = "Nom";
             comboBox1.SelectedIndex = -1;
-            
+
             Program.sql_con.Close();
 
             comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            all_deplacement all = new all_deplacement();
-            all.ShowDialog();
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            //if (comboBox1.SelectedIndex!=-1 || comboBox2.SelectedIndex!=-1)
-
-
-            //    {
-            //        this.Alert(" sélectionnez la ligne à mettre à jour", Form_Alert.enmType.Warning);
-            //    }
-            //    else
-            //    {
-
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || comboBox1.SelectedIndex == -1||  comboBox2.SelectedIndex == -1)
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || comboBox1.SelectedIndex == -1 || comboBox2.SelectedIndex == -1)
             {
                 this.Alert("sélectionnez la ligne à mettre à jour", Form_Alert.enmType.Error);
             }
             else
             {
 
-                        string PersoneNome = comboBox1.Text;
-                        string gradeNome = comboBox2.Text;
-                        string PersoneValue = comboBox1.SelectedValue.ToString();
-                        string gradeValue = comboBox2.SelectedValue.ToString();
+                string PersoneNome = comboBox1.Text;
+                string gradeNome = comboBox2.Text;
+                string PersoneValue = comboBox1.SelectedValue.ToString();
+                string gradeValue = comboBox2.SelectedValue.ToString();
 
-                        string type_mession = textBox1.Text;
-                        string destination = textBox2.Text;
-                        string transport = textBox3.Text;
-                       
+                string type_mession = textBox1.Text;
+                string destination = textBox2.Text;
+                string transport = textBox3.Text;
+
 
                 DateTime date_depart = Convert.ToDateTime(datePicker1.Value.ToString());
 
@@ -139,26 +145,13 @@ namespace simpleDatabase7
 
 
 
-                Rdlc_all_deplacement deplacement = new Rdlc_all_deplacement("0",PersoneNome, PersoneValue, gradeNome, gradeValue, type_mession, destination, transport, date_depart, date_retour);
+                Rdlc_all_deplacement deplacement = new Rdlc_all_deplacement(id_deplacemet,PersoneNome, PersoneValue, gradeNome, gradeValue, type_mession, destination, transport, date_depart, date_retour);
                 deplacement.ShowDialog();
-                textBox1.Text = ""; textBox2.Text = ""; textBox3.Text = ""; comboBox1.SelectedIndex = -1; comboBox2.SelectedIndex = -1;
+                this.Close();
 
-               
+
 
             }
-                        
-                        
-                        
-                    
-
-
-                //}
-            
-
-        }
-
-        private void dateTimePicker1_onValueChanged(object sender, EventArgs e)
-        {
 
         }
     }
