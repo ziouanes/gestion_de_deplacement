@@ -342,8 +342,8 @@ namespace simpleDatabase7
 
         private void button6_Click(object sender, EventArgs e)
         {
-            vehicules vs = new vehicules();
-            vs.ShowDialog();
+            //vehicules vs = new vehicules();
+            //vs.ShowDialog();
         }
 
         private void button3_Click_1(object sender, EventArgs e)

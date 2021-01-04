@@ -27,8 +27,19 @@ namespace simpleDatabase7
         }
 
 
+
+
         private void deplacement_Load(object sender, EventArgs e)
         {
+
+          
+
+           
+
+
+            datePicker1.Value = DateTime.Today.AddDays(0);
+            datePicker2.Value = DateTime.Today.AddDays(0);
+
             datePicker1.CustomFormat = "yyyy-MM-dd | HH:mm";
             datePicker2.CustomFormat = "yyyy-MM-dd | HH:mm";
 
@@ -116,7 +127,7 @@ namespace simpleDatabase7
             //    else
             //    {
 
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || comboBox1.SelectedIndex == -1||  comboBox2.SelectedIndex == -1)
+            if (textBox1.Text == "" || textBox4.Text == "" || textBox2.Text == "" || textBox3.Text == "" || comboBox1.SelectedIndex == -1||  comboBox2.SelectedIndex == -1)
             {
                 this.Alert("sélectionnez la ligne à mettre à jour", Form_Alert.enmType.Error);
             }
@@ -129,6 +140,7 @@ namespace simpleDatabase7
                         string gradeValue = comboBox2.SelectedValue.ToString();
 
                         string type_mession = textBox1.Text;
+                        string destination_ar = textBox4.Text;
                         string destination = textBox2.Text;
                         string transport = textBox3.Text;
                        
@@ -139,9 +151,9 @@ namespace simpleDatabase7
 
 
 
-                Rdlc_all_deplacement deplacement = new Rdlc_all_deplacement("0",PersoneNome, PersoneValue, gradeNome, gradeValue, type_mession, destination, transport, date_depart, date_retour);
+                Rdlc_all_deplacement deplacement = new Rdlc_all_deplacement("0", PersoneNome, PersoneValue, gradeNome, gradeValue, type_mession, destination, destination_ar, transport, date_depart, date_retour); ;
                 deplacement.ShowDialog();
-                textBox1.Text = ""; textBox2.Text = ""; textBox3.Text = ""; comboBox1.SelectedIndex = -1; comboBox2.SelectedIndex = -1;
+                textBox1.Text = ""; textBox2.Text = ""; textBox4.Text = ""; textBox3.Text = ""; comboBox1.SelectedIndex = -1; comboBox2.SelectedIndex = -1;
 
                
 
@@ -158,6 +170,11 @@ namespace simpleDatabase7
         }
 
         private void dateTimePicker1_onValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
         {
 
         }

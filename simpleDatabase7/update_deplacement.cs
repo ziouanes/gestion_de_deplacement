@@ -39,7 +39,7 @@ namespace simpleDatabase7
             {
                 OleDbCommand cmd = Program.sql_con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "SELECT id_person ,  id_grade , type_mession,DESTINATION,date_depart,date_retour,Transport from mission where id =" + id_deplacemet + "";
+                cmd.CommandText = "SELECT id_person ,  id_grade , type_mession,DESTINATION,DESTINATION_ar,date_depart,date_retour,Transport from mission where id =" + id_deplacemet + "";
                 DataTable table = new DataTable();
                 cmd.ExecuteNonQuery();
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
@@ -49,7 +49,7 @@ namespace simpleDatabase7
                     comboBox1.SelectedValue = row["id_person"].ToString();
                     comboBox2.SelectedValue = row["id_grade"].ToString();
                     textBox1.Text = row["type_mession"].ToString();
-
+                    textBox4.Text = row["DESTINATION_ar"].ToString();
                     textBox2.Text = row["DESTINATION"].ToString();
                     textBox3.Text = row["Transport"].ToString();
                     datePicker1.Value = (DateTime)row["date_depart"];
@@ -136,6 +136,7 @@ namespace simpleDatabase7
 
                 string type_mession = textBox1.Text;
                 string destination = textBox2.Text;
+                string destination_ar = textBox4.Text;
                 string transport = textBox3.Text;
 
 
@@ -145,7 +146,7 @@ namespace simpleDatabase7
 
 
 
-                Rdlc_all_deplacement deplacement = new Rdlc_all_deplacement(id_deplacemet,PersoneNome, PersoneValue, gradeNome, gradeValue, type_mession, destination, transport, date_depart, date_retour);
+                Rdlc_all_deplacement deplacement = new Rdlc_all_deplacement(id_deplacemet,PersoneNome, PersoneValue, gradeNome, gradeValue, type_mession, destination,destination_ar, transport, date_depart, date_retour);
                 deplacement.ShowDialog();
                 this.Close();
 

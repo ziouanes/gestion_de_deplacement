@@ -23,10 +23,11 @@ namespace simpleDatabase7
 
         string   _type_mession;
         string _destination   ;
+        string _destination_ar;
         string _transport     ;
        public DateTime _date_depart ;
        public DateTime _date_retour;
-        public Rdlc_all_deplacement(string id,string PersoneNome, string PersoneValue, string gradeNome, string gradeValue, string type_mession, string destination, string transport, DateTime date_depart, DateTime date_retour)
+        public Rdlc_all_deplacement(string id,string PersoneNome, string PersoneValue, string gradeNome, string gradeValue, string type_mession, string destination,string destination_ar, string transport, DateTime date_depart, DateTime date_retour)
 
         {
             InitializeComponent();
@@ -38,7 +39,9 @@ namespace simpleDatabase7
         
            _type_mession =  type_mession;
            _destination  =  destination;
-           _transport     =  transport;
+
+            _destination_ar = destination_ar;
+            _transport =  transport;
            _date_depart =  date_depart;
            _date_retour = date_retour;
         }
@@ -298,7 +301,7 @@ namespace simpleDatabase7
             reportParameters.Add(new ReportParameter("ReportParameter_name", _PersoneNome));
             reportParameters.Add(new ReportParameter("ReportParameter_Grade", _gradeNome));
             reportParameters.Add(new ReportParameter("ReportParameter_type_mession", _type_mession));
-            reportParameters.Add(new ReportParameter("ReportParameter_DESTINATION", _destination));
+            reportParameters.Add(new ReportParameter("ReportParameter_DESTINATION", _destination_ar));
             reportParameters.Add(new ReportParameter("ReportParameter_TRANSPORT", _transport));
             reportParameters.Add(new ReportParameter("ReportParameter_Date_depart",  _date_depart.ToString("MMMM  ", new System.Globalization.CultureInfo("ar-MA"))+ _date_depart.ToString("yyyy", new System.Globalization.CultureInfo("ar-MA")) +  " على الساعــة " + GetLocaleTime(_date_depart) + GetLocaleDate(_date_depart)));
             reportParameters.Add(new ReportParameter("ReportParameter_date_day", _date_depart.ToString("dd", new System.Globalization.CultureInfo("ar-MA"))));
@@ -353,7 +356,7 @@ namespace simpleDatabase7
                     if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
 
-                    using (OleDbCommand updateCommand = new OleDbCommand("UPDATE mission SET id_person = ? ,id_grade =? ,type_mession = ?,DESTINATION  = ? ,date_depart = ? , date_retour = ? , Transport = ?  , nbr_Taux = ?  WHERE id = ?", Program.sql_con))
+                    using (OleDbCommand updateCommand = new OleDbCommand("UPDATE mission SET id_person = ? ,id_grade =? ,type_mession = ?,DESTINATION  = ? ,DESTINATION_ar = ?,date_depart = ? , date_retour = ? , Transport = ?  , nbr_Taux = ?  WHERE id = ?", Program.sql_con))
                     {
                         if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
@@ -361,11 +364,14 @@ namespace simpleDatabase7
                         updateCommand.Parameters.AddWithValue("@id_grade", _gradeValue);
                         updateCommand.Parameters.AddWithValue("@type_mession", _type_mession);
                         updateCommand.Parameters.AddWithValue("@DESTINATION", _destination);
+                        updateCommand.Parameters.AddWithValue("@DESTINATION_ar", _destination_ar);
                         updateCommand.Parameters.AddWithValue("@date_depart", _date_depart);
                         updateCommand.Parameters.AddWithValue("@date_retour", _date_retour);
                         updateCommand.Parameters.AddWithValue("@Transport", _transport);
                         updateCommand.Parameters.AddWithValue("@nbr_Taux", GetLocaleTaux(_date_depart, _date_retour));
                         updateCommand.Parameters.AddWithValue("@id", _id);
+
+
 
 
                         updateCommand.ExecuteNonQuery();
@@ -382,27 +388,31 @@ namespace simpleDatabase7
 
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
-            using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO mission ([id_person],[id_grade],[type_mession],[DESTINATION],[date_depart],[date_retour],[Transport],[nbr_Taux]) VALUES (?,?,?,?,?,?,?,?)", Program.sql_con))
-            {
+                    using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO mission ([id_person],[id_grade],[type_mession],[DESTINATION],[DESTINATION_ar],[date_depart],[date_retour],[Transport],[nbr_Taux]) VALUES (?,?,?,?,?,?,?,?,?)", Program.sql_con))
+                    {
 
 
 
-                insertCommand.Parameters.AddWithValue("@id_person", _PersoneValue);
-                insertCommand.Parameters.AddWithValue("@id_grade", _gradeValue);
-                insertCommand.Parameters.AddWithValue("@type_mession", _type_mession);
-                insertCommand.Parameters.AddWithValue("@DESTINATION", _destination);
-                insertCommand.Parameters.AddWithValue("@date_depart", _date_depart);
-                insertCommand.Parameters.AddWithValue("@date_retour", _date_retour);
+                        insertCommand.Parameters.AddWithValue("@id_person", _PersoneValue);
+                        insertCommand.Parameters.AddWithValue("@id_grade", _gradeValue);
+                        insertCommand.Parameters.AddWithValue("@type_mession", _type_mession);
+                        insertCommand.Parameters.AddWithValue("@DESTINATION", _destination);
+                        insertCommand.Parameters.AddWithValue("@DESTINATION_ar", _destination_ar);
 
-                insertCommand.Parameters.AddWithValue("@Transport", _transport);
-                    //string ss = GetLocaleTaux(_date_depart, _date_retour).ToString();
-                insertCommand.Parameters.AddWithValue("@nbr_Taux", GetLocaleTaux(_date_depart, _date_retour)) ;
+                        insertCommand.Parameters.AddWithValue("@date_depart", _date_depart);
+                        insertCommand.Parameters.AddWithValue("@date_retour", _date_retour);
+
+                        insertCommand.Parameters.AddWithValue("@Transport", _transport);
+                        //string ss = GetLocaleTaux(_date_depart, _date_retour).ToString();
+                        insertCommand.Parameters.AddWithValue("@nbr_Taux", GetLocaleTaux(_date_depart, _date_retour));
 
 
 
 
 
-                    insertCommand.ExecuteNonQuery();
+
+
+                        insertCommand.ExecuteNonQuery();
                         this.Alert("Enregistre Success", Form_Alert.enmType.Info);
                     }
                 }
