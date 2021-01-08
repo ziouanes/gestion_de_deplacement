@@ -47,7 +47,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>يتعين على السيد</Value>
+                    <Value>يتعين على السيد </Value>
                     <Style>
                       <FontFamily>simplified Arabic</FontFamily>
                       <FontSize>16pt</FontSize>
@@ -61,7 +61,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>1.1875in</Top>
-            <Left>5.42583in</Left>
+            <Left>4.92583in</Left>
             <Height>0.4375in</Height>
             <Width>1.36688in</Width>
             <ZIndex>1</ZIndex>
@@ -82,7 +82,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>الصـــــفــــــــة</Value>
+                    <Value>الصـــــفــــــــة </Value>
                     <Style>
                       <FontFamily>simplified Arabic</FontFamily>
                       <FontSize>16pt</FontSize>
@@ -96,7 +96,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>1.76042in</Top>
-            <Left>5.42583in</Left>
+            <Left>4.92583in</Left>
             <Height>0.4375in</Height>
             <Width>1.36688in</Width>
             <ZIndex>2</ZIndex>
@@ -117,7 +117,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>نوع المأمورية</Value>
+                    <Value>نوع المأمورية </Value>
                     <Style>
                       <FontFamily>simplified Arabic</FontFamily>
                       <FontSize>16pt</FontSize>
@@ -131,7 +131,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>2.38542in</Top>
-            <Left>5.42583in</Left>
+            <Left>4.92583in</Left>
             <Height>0.4375in</Height>
             <Width>1.36688in</Width>
             <ZIndex>3</ZIndex>
@@ -152,7 +152,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>الذهاب الـــــى</Value>
+                    <Value>الذهاب الـــــى </Value>
                     <Style>
                       <FontFamily>simplified Arabic</FontFamily>
                       <FontSize>16pt</FontSize>
@@ -166,7 +166,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>2.97917in</Top>
-            <Left>5.42583in</Left>
+            <Left>4.92583in</Left>
             <Height>0.4375in</Height>
             <Width>1.36688in</Width>
             <ZIndex>4</ZIndex>
@@ -187,7 +187,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>وسيلة النقـــــل</Value>
+                    <Value>وسيلة النقـــــل </Value>
                     <Style>
                       <FontFamily>simplified Arabic</FontFamily>
                       <FontSize>16pt</FontSize>
@@ -201,7 +201,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>3.60417in</Top>
-            <Left>5.42583in</Left>
+            <Left>4.92583in</Left>
             <Height>0.4375in</Height>
             <Width>1.36688in</Width>
             <ZIndex>5</ZIndex>
@@ -222,7 +222,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>تاريخ الذهـــاب</Value>
+                    <Value>تاريخ الذهـــاب </Value>
                     <Style>
                       <FontFamily>simplified Arabic</FontFamily>
                       <FontSize>16pt</FontSize>
@@ -236,7 +236,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>4.22917in</Top>
-            <Left>5.42583in</Left>
+            <Left>4.92583in</Left>
             <Height>0.4375in</Height>
             <Width>1.36688in</Width>
             <ZIndex>6</ZIndex>
@@ -257,7 +257,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>تاريخ الرجــوع</Value>
+                    <Value>    تاريخ الرجـوع </Value>
                     <Style>
                       <FontFamily>simplified Arabic</FontFamily>
                       <FontSize>16pt</FontSize>
@@ -271,7 +271,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>4.91667in</Top>
-            <Left>5.42583in</Left>
+            <Left>4.92583in</Left>
             <Height>0.4375in</Height>
             <Width>1.36688in</Width>
             <ZIndex>7</ZIndex>
@@ -320,7 +320,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox29</rd:DefaultName>
             <Top>1.1875in</Top>
-            <Left>1.65446in</Left>
+            <Left>1.40446in</Left>
             <Height>0.4375in</Height>
             <Width>3.46235in</Width>
             <ZIndex>8</ZIndex>
@@ -362,7 +362,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>1.76042in</Top>
-            <Left>0.70709in</Left>
+            <Left>0.45709in</Left>
             <Height>0.40972in</Height>
             <Width>4.40972in</Width>
             <ZIndex>9</ZIndex>
@@ -404,7 +404,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>2.4132in</Top>
-            <Left>0.81875in</Left>
+            <Left>0.56875in</Left>
             <Height>0.40972in</Height>
             <Width>4.29806in</Width>
             <ZIndex>10</ZIndex>
@@ -490,7 +490,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>3.63195in</Top>
-            <Left>0.70709in</Left>
+            <Left>0.45709in</Left>
             <Height>0.40972in</Height>
             <Width>4.41319in</Width>
             <ZIndex>12</ZIndex>
@@ -532,7 +532,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>3.00695in</Top>
-            <Left>0.70709in</Left>
+            <Left>0.45709in</Left>
             <Height>0.40972in</Height>
             <Width>4.41319in</Width>
             <ZIndex>13</ZIndex>
@@ -678,7 +678,7 @@
         <Height>5.65625in</Height>
         <Style />
       </Body>
-      <Width>8.37375in</Width>
+      <Width>8.57167in</Width>
       <Page>
         <PageHeader>
           <Height>1.67236in</Height>
