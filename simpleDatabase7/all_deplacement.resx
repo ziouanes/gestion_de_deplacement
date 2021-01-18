@@ -126,11 +126,11 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Afficher_invoice.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAC3SURBVDhPYxhcoKG+eWFDXfM7AngBVDkmAEpOa6ht3o0XA9VAlSNAQ0MDT1NtkyEQGxOJDbtL
-        urmh2sE2XwDi/yTic1DtYANAfsOmCB9+B9WOYsB3KI0Pw9RgMaC2+VNjXaMrVBgDgORAamhiwBsyDHgD
-        FQYaUNtSAJTY3Vjb/IKQASA1ILVAPXlQYQQAmnqWoAuAaqBcTACSBOKDQBtWY8UgObwGNDQHNdY1p+PD
-        IDVQ5dQADAwArOUmdzvpgXQAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAALdJREFUOE9j
+        GFygob55YUNd8zsCeAFUOSYASk5rqG3ejRcD1UCVI0BDQwNPU22TIRAbE4kNu0u6uaHawTZfAOL/JOJz
+        UO1gA0B+w6YIH34H1Y5iwHcojQ/D1GAxoLb5U2NdoytUGAOA5EBqaGLAGzIMeAMVBhpQ21IAlNjdWNv8
+        gpABIDUgtUA9eVBhBACaepagC4BqoFxMAJIE4oNAG1ZjxSA5vAY0NAc11jWn48MgNVDl1AAMDACs5SZ3
+        O+mBdAAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="messionBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

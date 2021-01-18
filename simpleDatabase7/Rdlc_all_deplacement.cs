@@ -245,7 +245,11 @@ namespace simpleDatabase7
         
         private void Rdlc_all_deplacement_Load(object sender, EventArgs e)
         {
-            TimeSpan difference = _date_retour - _date_depart;
+            if (int.Parse(_id) == 0)
+            {
+                button1.Visible = false;
+            }
+                TimeSpan difference = _date_retour - _date_depart;
             var days = difference.TotalDays;
             int day1 = System.Convert.ToInt32(System.Math.Floor(days));
            //MessageBox.Show("day ...." + day1.ToString());
@@ -426,16 +430,68 @@ namespace simpleDatabase7
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("sauvegarder à nouveau ?  ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                    if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
-            Savedata();
+                using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO mission ([id_person],[id_grade],[type_mession],[DESTINATION],[DESTINATION_ar],[date_depart],[date_retour],[Transport],[nbr_Taux]) VALUES (?,?,?,?,?,?,?,?,?)", Program.sql_con))
+                {
 
-            save = true;
+
+
+                    insertCommand.Parameters.AddWithValue("@id_person", _PersoneValue);
+                    insertCommand.Parameters.AddWithValue("@id_grade", _gradeValue);
+                    insertCommand.Parameters.AddWithValue("@type_mession", _type_mession);
+                    insertCommand.Parameters.AddWithValue("@DESTINATION", _destination);
+                    insertCommand.Parameters.AddWithValue("@DESTINATION_ar", _destination_ar);
+
+                    insertCommand.Parameters.AddWithValue("@date_depart", _date_depart);
+                    insertCommand.Parameters.AddWithValue("@date_retour", _date_retour);
+
+                    insertCommand.Parameters.AddWithValue("@Transport", _transport);
+                    //string ss = GetLocaleTaux(_date_depart, _date_retour).ToString();
+                    insertCommand.Parameters.AddWithValue("@nbr_Taux", GetLocaleTaux(_date_depart, _date_retour));
+
+
+
+
+
+
+
+                    insertCommand.ExecuteNonQuery();
+                    this.Alert("Enregistre Success", Form_Alert.enmType.Info);
+                    save = true;
+
+
+                }
+            }
+
+
+           
             
                 
             
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+           
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("sauvegarder à modification ?  ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                Savedata();
+
+            save = true;
+
+            }
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }

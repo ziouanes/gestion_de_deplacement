@@ -250,6 +250,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "update_personne";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "update_personne";
             this.Load += new System.EventHandler(this.update_personne_Load);
             this.ResumeLayout(false);

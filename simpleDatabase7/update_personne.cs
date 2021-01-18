@@ -41,7 +41,7 @@ namespace simpleDatabase7
 
             OleDbCommand cmd = Program.sql_con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select  * from Personne";
+            cmd.CommandText = "select  * from Personne ORDER BY Nom";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);
@@ -54,7 +54,7 @@ namespace simpleDatabase7
             textBox6.Text = "";
             Program.sql_con.Close();
 
-            comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            //comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 

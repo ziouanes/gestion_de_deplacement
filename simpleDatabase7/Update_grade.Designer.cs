@@ -179,11 +179,11 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(389, 270);
+            this.button2.Location = new System.Drawing.Point(345, 270);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 38);
+            this.button2.Size = new System.Drawing.Size(164, 38);
             this.button2.TabIndex = 196;
-            this.button2.Text = "Add_new";
+            this.button2.Text = "Ajouter nouveau";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -206,6 +206,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Update_grade";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update_grade";
             this.Load += new System.EventHandler(this.Update_grade_Load);
             this.ResumeLayout(false);

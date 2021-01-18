@@ -76,7 +76,7 @@ namespace simpleDatabase7
 
             OleDbCommand cmd = Program.sql_con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from GRADE";
+            cmd.CommandText = "select * from GRADE ORDER BY type";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);
@@ -88,7 +88,7 @@ namespace simpleDatabase7
             Program.sql_con.Close();
 
 
-            comboBox2.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            //comboBox2.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBox2.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
         private void ExecuteQueryPersonne()
@@ -98,7 +98,7 @@ namespace simpleDatabase7
 
             OleDbCommand cmd = Program.sql_con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select  * from Personne";
+            cmd.CommandText = "select  * from Personne ORDER BY Nom";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);
@@ -110,7 +110,7 @@ namespace simpleDatabase7
 
             Program.sql_con.Close();
 
-            comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            //comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
