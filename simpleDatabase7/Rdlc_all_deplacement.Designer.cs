@@ -34,9 +34,9 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+         //   this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+           // this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -97,10 +97,10 @@
             // 
             // bunifuDragControl1
             // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.panel3;
-            this.bunifuDragControl1.Vertical = true;
+          //  this.bunifuDragControl1.Fixed = true;
+          //  this.bunifuDragControl1.Horizontal = true;
+          //  this.bunifuDragControl1.TargetControl = this.panel3;
+          //  this.bunifuDragControl1.Vertical = true;
             // 
             // reportViewer1
             // 
@@ -114,10 +114,10 @@
             // 
             // bunifuDragControl2
             // 
-            this.bunifuDragControl2.Fixed = true;
-            this.bunifuDragControl2.Horizontal = true;
-            this.bunifuDragControl2.TargetControl = this;
-            this.bunifuDragControl2.Vertical = true;
+         //   this.bunifuDragControl2.Fixed = true;
+         //   this.bunifuDragControl2.Horizontal = true;
+         //   this.bunifuDragControl2.TargetControl = this;
+         //   this.bunifuDragControl2.Vertical = true;
             // 
             // button1
             // 
@@ -179,9 +179,9 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+      //  private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
+      //  private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
     }

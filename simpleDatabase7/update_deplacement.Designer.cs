@@ -41,7 +41,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+         //   this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.button4 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -178,10 +178,10 @@
             // 
             // bunifuDragControl1
             // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this;
-            this.bunifuDragControl1.Vertical = true;
+          //  this.bunifuDragControl1.Fixed = true;
+          //  this.bunifuDragControl1.Horizontal = true;
+          //  this.bunifuDragControl1.TargetControl = this;
+          //  this.bunifuDragControl1.Vertical = true;
             // 
             // button4
             // 
@@ -366,7 +366,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button1;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+     //   private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox1;

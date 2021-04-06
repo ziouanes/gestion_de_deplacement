@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(all_deplacement));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+           // this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.peopleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.peopleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -95,10 +95,10 @@
             // 
             // bunifuDragControl1
             // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this;
-            this.bunifuDragControl1.Vertical = true;
+           // this.bunifuDragControl1.Fixed = true;
+           // this.bunifuDragControl1.Horizontal = true;
+           // this.bunifuDragControl1.TargetControl = this;
+           // this.bunifuDragControl1.Vertical = true;
             // 
             // peopleBindingSource
             // 
@@ -495,7 +495,7 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        //private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.BindingSource peopleBindingSource;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;

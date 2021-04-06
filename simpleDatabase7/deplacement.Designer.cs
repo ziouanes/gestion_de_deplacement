@@ -42,7 +42,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            //this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -182,10 +182,10 @@
             // 
             // bunifuDragControl1
             // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this;
-            this.bunifuDragControl1.Vertical = true;
+            //this.bunifuDragControl1.Fixed = true;
+            //this.bunifuDragControl1.Horizontal = true;
+            //this.bunifuDragControl1.TargetControl = this;
+            //this.bunifuDragControl1.Vertical = true;
             // 
             // comboBox2
             // 
@@ -371,7 +371,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        //private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
