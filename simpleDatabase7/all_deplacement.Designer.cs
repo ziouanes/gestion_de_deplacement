@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(all_deplacement));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-           // this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.peopleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.peopleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -92,13 +91,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bunifuDragControl1
-            // 
-           // this.bunifuDragControl1.Fixed = true;
-           // this.bunifuDragControl1.Horizontal = true;
-           // this.bunifuDragControl1.TargetControl = this;
-           // this.bunifuDragControl1.Vertical = true;
             // 
             // peopleBindingSource
             // 
@@ -467,6 +459,7 @@
             this.Name = "all_deplacement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Deplacement";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.all_deplacement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource1)).EndInit();

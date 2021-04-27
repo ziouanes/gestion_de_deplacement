@@ -34,11 +34,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-         //   this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-           // this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.SuspendLayout();
             // 
             // panel2
@@ -95,13 +94,6 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // bunifuDragControl1
-            // 
-          //  this.bunifuDragControl1.Fixed = true;
-          //  this.bunifuDragControl1.Horizontal = true;
-          //  this.bunifuDragControl1.TargetControl = this.panel3;
-          //  this.bunifuDragControl1.Vertical = true;
-            // 
             // reportViewer1
             // 
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "simpleDatabase7.ReportMession.rdlc";
@@ -111,13 +103,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(920, 621);
             this.reportViewer1.TabIndex = 205;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
-            // 
-            // bunifuDragControl2
-            // 
-         //   this.bunifuDragControl2.Fixed = true;
-         //   this.bunifuDragControl2.Horizontal = true;
-         //   this.bunifuDragControl2.TargetControl = this;
-         //   this.bunifuDragControl2.Vertical = true;
             // 
             // button1
             // 
@@ -150,6 +135,13 @@
             this.button3.Text = "Enregistrer";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel3;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // Rdlc_all_deplacement
             // 
@@ -184,5 +176,6 @@
       //  private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

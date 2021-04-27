@@ -269,6 +269,7 @@
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("Archive.IconOptions.Image")));
             this.Name = "Archive";
             this.Text = "Archive";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Archive_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

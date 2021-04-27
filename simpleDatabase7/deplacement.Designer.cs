@@ -42,7 +42,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            //this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,6 +54,7 @@
             this.datePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.SuspendLayout();
             // 
             // comboBox1
@@ -179,13 +179,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(852, 10);
             this.panel1.TabIndex = 147;
-            // 
-            // bunifuDragControl1
-            // 
-            //this.bunifuDragControl1.Fixed = true;
-            //this.bunifuDragControl1.Horizontal = true;
-            //this.bunifuDragControl1.TargetControl = this;
-            //this.bunifuDragControl1.Vertical = true;
             // 
             // comboBox2
             // 
@@ -316,6 +309,13 @@
             this.textBox4.TabIndex = 180;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this;
+            this.bunifuDragControl1.Vertical = true;
+            // 
             // deplacement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -382,5 +382,6 @@
         private System.Windows.Forms.DateTimePicker datePicker2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox4;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }
