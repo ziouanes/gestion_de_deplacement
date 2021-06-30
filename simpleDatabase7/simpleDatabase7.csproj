@@ -165,6 +165,12 @@
     <Compile Include="Etat des sommes dues.Designer.cs">
       <DependentUpon>Etat des sommes dues.cs</DependentUpon>
     </Compile>
+    <Compile Include="Extra Taux.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Extra Taux.Designer.cs">
+      <DependentUpon>Extra Taux.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Alert.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Etat des sommes dues.resx">
       <DependentUpon>Etat des sommes dues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extra Taux.resx">
+      <DependentUpon>Extra Taux.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Alert.resx">
       <DependentUpon>Form_Alert.cs</DependentUpon>

@@ -252,9 +252,20 @@ namespace simpleDatabase7
                 TimeSpan difference = _date_retour - _date_depart;
             var days = difference.TotalDays;
             int day1 = System.Convert.ToInt32(System.Math.Floor(days));
-           //MessageBox.Show("day ...." + day1.ToString());
-            //MessageBox.Show("taux ...." + GetLocaleTaux(_date_depart, _date_retour).ToString());
+           MessageBox.Show("day ...." + day1.ToString());
+            MessageBox.Show("taux ...." + GetLocaleTaux(_date_depart, _date_retour).ToString());
 
+           // var dates = new List<DateTime>();
+
+           // for (var dt = _date_depart; dt <= _date_retour; dt = dt.AddDays(1))
+           // {
+           //     dates.Add(dt);
+           // }
+           //MessageBox.Show("days::::" + dates.Select(o=>o.ToString())) ;
+           if(GetLocaleTaux(_date_depart, _date_retour) <0)
+            {
+                MessageBox.Show("error");   
+            }
             if (day1 < 0 || GetLocaleTaux(_date_depart, _date_retour)==0)
             {
                 MessageBox.Show("Error date deferent", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
