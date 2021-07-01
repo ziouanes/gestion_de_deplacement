@@ -242,6 +242,7 @@ namespace simpleDatabase7
             
         }
 
+      public static  int newTaux = 0;
         
         private void Rdlc_all_deplacement_Load(object sender, EventArgs e)
         {
@@ -252,8 +253,8 @@ namespace simpleDatabase7
                 TimeSpan difference = _date_retour - _date_depart;
             var days = difference.TotalDays;
             int day1 = System.Convert.ToInt32(System.Math.Floor(days));
-           MessageBox.Show("day ...." + day1.ToString());
-            MessageBox.Show("taux ...." + GetLocaleTaux(_date_depart, _date_retour).ToString());
+          //MessageBox.Show("day ...." + day1.ToString());
+            //MessageBox.Show("taux ...." + GetLocaleTaux(_date_depart, _date_retour).ToString());
 
            // var dates = new List<DateTime>();
 
@@ -262,19 +263,23 @@ namespace simpleDatabase7
            //     dates.Add(dt);
            // }
            //MessageBox.Show("days::::" + dates.Select(o=>o.ToString())) ;
-           if(GetLocaleTaux(_date_depart, _date_retour) <0)
-            {
-                MessageBox.Show("error");   
-            }
             if (day1 < 0 || GetLocaleTaux(_date_depart, _date_retour)==0)
             {
                 MessageBox.Show("Error date deferent", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
+          
             else
             {
+                if (GetLocaleTaux(_date_depart, _date_retour) < 0)
+                {
+                    Extra_Taux extra_Taux = new Extra_Taux();
+                    extra_Taux.ShowDialog();
+                    //MessageBox.Show(newTaux.ToString());
 
-            if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
+                }
+
+                if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
             
             
                 OleDbCommand cmd = Program.sql_con.CreateCommand();
@@ -383,10 +388,19 @@ namespace simpleDatabase7
                         updateCommand.Parameters.AddWithValue("@date_depart", _date_depart);
                         updateCommand.Parameters.AddWithValue("@date_retour", _date_retour);
                         updateCommand.Parameters.AddWithValue("@Transport", _transport);
-                        updateCommand.Parameters.AddWithValue("@nbr_Taux", GetLocaleTaux(_date_depart, _date_retour));
                         updateCommand.Parameters.AddWithValue("@id", _id);
 
+                        //updateCommand.Parameters.AddWithValue("@nbr_Taux", GetLocaleTaux(_date_depart, _date_retour));
+                        if (GetLocaleTaux(_date_depart, _date_retour) < 0)
+                        {
+                            updateCommand.Parameters.AddWithValue("@nbr_Taux", newTaux);
 
+                        }
+                        else
+                        {
+                            updateCommand.Parameters.AddWithValue("@nbr_Taux", GetLocaleTaux(_date_depart, _date_retour));
+
+                        }
 
 
                         updateCommand.ExecuteNonQuery();
@@ -419,7 +433,16 @@ namespace simpleDatabase7
 
                         insertCommand.Parameters.AddWithValue("@Transport", _transport);
                         //string ss = GetLocaleTaux(_date_depart, _date_retour).ToString();
-                        insertCommand.Parameters.AddWithValue("@nbr_Taux", GetLocaleTaux(_date_depart, _date_retour));
+                        if (GetLocaleTaux(_date_depart, _date_retour) < 0)
+                        {
+                            insertCommand.Parameters.AddWithValue("@nbr_Taux", newTaux);
+
+                        }
+                        else
+                        {
+                            insertCommand.Parameters.AddWithValue("@nbr_Taux", GetLocaleTaux(_date_depart, _date_retour));
+
+                        }
 
 
 
@@ -461,7 +484,17 @@ namespace simpleDatabase7
 
                     insertCommand.Parameters.AddWithValue("@Transport", _transport);
                     //string ss = GetLocaleTaux(_date_depart, _date_retour).ToString();
-                    insertCommand.Parameters.AddWithValue("@nbr_Taux", GetLocaleTaux(_date_depart, _date_retour));
+
+                         if (GetLocaleTaux(_date_depart, _date_retour) < 0)
+                         {
+                        insertCommand.Parameters.AddWithValue("@nbr_Taux",newTaux);
+
+                         }
+                         else
+                         {
+                        insertCommand.Parameters.AddWithValue("@nbr_Taux", GetLocaleTaux(_date_depart, _date_retour));
+
+                         }
 
 
 

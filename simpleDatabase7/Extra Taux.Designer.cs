@@ -58,6 +58,7 @@ namespace simpleDatabase7
             this.simpleButton1.Size = new System.Drawing.Size(125, 23);
             this.simpleButton1.TabIndex = 1;
             this.simpleButton1.Text = "Valide";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // label1
             // 
@@ -83,6 +84,7 @@ namespace simpleDatabase7
             this.Name = "Extra_Taux";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Extra_Taux";
+            this.Load += new System.EventHandler(this.Extra_Taux_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rangeTrackBarControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rangeTrackBarControl1)).EndInit();
             this.ResumeLayout(false);

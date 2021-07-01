@@ -19,7 +19,7 @@ namespace simpleDatabase7
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
            // Application.Run(new acceulle());
-           Application.Run(new Extra_Taux());
+           Application.Run(new acceulle());
 
         }
 
