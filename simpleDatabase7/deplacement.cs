@@ -31,10 +31,9 @@ namespace simpleDatabase7
 
         private void deplacement_Load(object sender, EventArgs e)
         {
-
-          
-
            
+
+
 
 
             datePicker1.Value = DateTime.Today.AddDays(0);
@@ -47,6 +46,8 @@ namespace simpleDatabase7
 
             ExecuteQueryPersonne();
             ExecuteQuerygrade();
+            comboBox1.SelectedText = "";
+            comboBox2.SelectedText = "";
 
         }
 
@@ -63,15 +64,19 @@ namespace simpleDatabase7
             DataTable dt = new DataTable();
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);
             da.Fill(dt);
-            comboBox2.DataSource = dt;
-            comboBox2.ValueMember = "id";
-            comboBox2.DisplayMember = "type";
-            comboBox2.SelectedIndex = -1;
+            comboBox2.Properties.DataSource = dt;
+            comboBox2.Properties.ValueMember = "id";
+            comboBox2.Properties.DisplayMember = "type";
+
+            comboBox2.Properties.PopulateColumns();
+            comboBox2.Properties.Columns[0].Visible = false;
+            comboBox2.Properties.Columns[2].Visible = false;
+            comboBox2.ItemIndex = -1;
             Program.sql_con.Close();
 
 
             //comboBox2.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            comboBox2.AutoCompleteSource = AutoCompleteSource.ListItems;
+           // comboBox2.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         //setexecutequery
@@ -87,15 +92,21 @@ namespace simpleDatabase7
             DataTable dt = new DataTable();
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);
             da.Fill(dt);
-            comboBox1.DataSource = dt;
-            comboBox1.ValueMember = "id_Person";
-            comboBox1.DisplayMember = "Nom";
-            comboBox1.SelectedIndex = -1;
-            
+            comboBox1.Properties.DataSource = dt;
+            comboBox1.Properties.ValueMember = "id_Person";
+            comboBox1.Properties.DisplayMember = "Nom";
+            comboBox1.ItemIndex = -1;
+
+            comboBox1.Properties.PopulateColumns();
+            comboBox1.Properties.Columns[0].Visible = false;
+            comboBox1.Properties.Columns[2].Visible = false;
+            comboBox1.Properties.Columns[3].Visible = false;
+
+
             Program.sql_con.Close();
 
             //comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
+            //comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -127,7 +138,7 @@ namespace simpleDatabase7
             //    else
             //    {
 
-            if (textBox1.Text == "" || textBox4.Text == "" || textBox2.Text == "" || textBox3.Text == "" || comboBox1.SelectedIndex == -1||  comboBox2.SelectedIndex == -1)
+            if (textBox1.Text == "" || textBox4.Text == "" || textBox2.Text == "" || textBox3.Text == "" || comboBox1.ItemIndex == -1||  comboBox2.ItemIndex == -1)
             {
                 this.Alert("sélectionnez la ligne à mettre à jour", Form_Alert.enmType.Error);
             }
@@ -136,8 +147,8 @@ namespace simpleDatabase7
 
                         string PersoneNome = comboBox1.Text;
                         string gradeNome = comboBox2.Text;
-                        string PersoneValue = comboBox1.SelectedValue.ToString();
-                        string gradeValue = comboBox2.SelectedValue.ToString();
+                        string PersoneValue = comboBox1.EditValue.ToString();
+                        string gradeValue = comboBox2.EditValue.ToString();
 
                         string type_mession = textBox1.Text;
                         string destination_ar = textBox4.Text;
@@ -153,7 +164,7 @@ namespace simpleDatabase7
 
                 Rdlc_all_deplacement deplacement = new Rdlc_all_deplacement("0", PersoneNome, PersoneValue, gradeNome, gradeValue, type_mession, destination, destination_ar, transport, date_depart, date_retour); ;
                 deplacement.ShowDialog();
-                textBox1.Text = ""; textBox2.Text = ""; textBox4.Text = ""; textBox3.Text = ""; comboBox1.SelectedIndex = -1; comboBox2.SelectedIndex = -1;
+                textBox1.Text = ""; textBox2.Text = ""; textBox4.Text = ""; textBox3.Text = ""; comboBox1.ItemIndex = -1; comboBox2.ItemIndex = -1;
 
                
 

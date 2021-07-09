@@ -46,8 +46,9 @@ namespace simpleDatabase7
                 da.Fill(table);
                 foreach (DataRow row in table.Rows)
                 {
-                    comboBox1.SelectedValue = row["id_person"].ToString();
-                    comboBox2.SelectedValue = row["id_grade"].ToString();
+                    comboBox1.EditValue = row["id_person"];
+                   // comboBox1.EditValue = ;
+                    comboBox2.EditValue = row["id_grade"];
                     textBox1.Text = row["type_mession"].ToString();
                     textBox4.Text = row["DESTINATION_ar"].ToString();
                     textBox2.Text = row["DESTINATION"].ToString();
@@ -81,15 +82,19 @@ namespace simpleDatabase7
             DataTable dt = new DataTable();
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);
             da.Fill(dt);
-            comboBox2.DataSource = dt;
-            comboBox2.ValueMember = "id";
-            comboBox2.DisplayMember = "type";
-            comboBox2.SelectedIndex = -1;
+            comboBox2.Properties.DataSource = dt;
+            comboBox2.Properties.ValueMember = "id";
+            comboBox2.Properties.DisplayMember = "type";
+
+            comboBox2.Properties.PopulateColumns();
+            comboBox2.Properties.Columns[0].Visible = false;
+            comboBox2.Properties.Columns[2].Visible = false;
+            comboBox2.ItemIndex = -1;
             Program.sql_con.Close();
 
 
             //comboBox2.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            comboBox2.AutoCompleteSource = AutoCompleteSource.ListItems;
+           // comboBox2.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
         private void ExecuteQueryPersonne()
         {
@@ -103,15 +108,19 @@ namespace simpleDatabase7
             DataTable dt = new DataTable();
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);
             da.Fill(dt);
-            comboBox1.DataSource = dt;
-            comboBox1.ValueMember = "id_Person";
-            comboBox1.DisplayMember = "Nom";
-            comboBox1.SelectedIndex = -1;
+            comboBox1.Properties.DataSource = dt;
+            comboBox1.Properties.ValueMember = "id_Person";
+            comboBox1.Properties.DisplayMember = "Nom";
+
+            comboBox1.Properties.PopulateColumns();
+            comboBox1.Properties.Columns[0].Visible = false;
+            comboBox1.Properties.Columns[2].Visible = false;
+            comboBox1.Properties.Columns[3].Visible = false;
 
             Program.sql_con.Close();
 
             //comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
+          //  comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -122,7 +131,7 @@ namespace simpleDatabase7
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || comboBox1.SelectedIndex == -1 || comboBox2.SelectedIndex == -1)
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || comboBox1.ItemIndex == -1 || comboBox2.ItemIndex == -1)
             {
                 this.Alert("sélectionnez la ligne à mettre à jour", Form_Alert.enmType.Error);
             }
@@ -131,8 +140,8 @@ namespace simpleDatabase7
 
                 string PersoneNome = comboBox1.Text;
                 string gradeNome = comboBox2.Text;
-                string PersoneValue = comboBox1.SelectedValue.ToString();
-                string gradeValue = comboBox2.SelectedValue.ToString();
+                string PersoneValue = comboBox1.EditValue.ToString();
+                string gradeValue = comboBox2.EditValue.ToString();
 
                 string type_mession = textBox1.Text;
                 string destination = textBox2.Text;

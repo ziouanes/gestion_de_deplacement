@@ -36,12 +36,9 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-         //   this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.button4 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -55,6 +52,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.comboBox2 = new DevExpress.XtraEditors.LookUpEdit();
+            this.comboBox1 = new DevExpress.XtraEditors.LookUpEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBox2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBox1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // datePicker2
@@ -65,7 +67,7 @@
             this.datePicker2.Location = new System.Drawing.Point(319, 490);
             this.datePicker2.Name = "datePicker2";
             this.datePicker2.Size = new System.Drawing.Size(299, 33);
-            this.datePicker2.TabIndex = 201;
+            this.datePicker2.TabIndex = 7;
             this.datePicker2.Value = new System.DateTime(2020, 12, 15, 12, 29, 0, 0);
             // 
             // datePicker1
@@ -76,7 +78,7 @@
             this.datePicker1.Location = new System.Drawing.Point(319, 421);
             this.datePicker1.Name = "datePicker1";
             this.datePicker1.Size = new System.Drawing.Size(299, 33);
-            this.datePicker1.TabIndex = 200;
+            this.datePicker1.TabIndex = 6;
             this.datePicker1.Value = new System.DateTime(2020, 12, 15, 12, 29, 0, 0);
             // 
             // label6
@@ -95,7 +97,7 @@
             this.textBox3.Location = new System.Drawing.Point(319, 345);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(299, 33);
-            this.textBox3.TabIndex = 199;
+            this.textBox3.TabIndex = 5;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
@@ -114,17 +116,7 @@
             this.textBox2.Location = new System.Drawing.Point(16, 282);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(193, 33);
-            this.textBox2.TabIndex = 197;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(319, 152);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(299, 30);
-            this.comboBox2.TabIndex = 195;
+            this.textBox2.TabIndex = 4;
             // 
             // label1
             // 
@@ -135,16 +127,6 @@
             this.label1.Size = new System.Drawing.Size(65, 35);
             this.label1.TabIndex = 194;
             this.label1.Text = "الــصفــة";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(319, 93);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(299, 30);
-            this.comboBox1.TabIndex = 193;
             // 
             // button5
             // 
@@ -171,17 +153,10 @@
             this.button1.Location = new System.Drawing.Point(278, 578);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(212, 38);
-            this.button1.TabIndex = 190;
+            this.button1.TabIndex = 8;
             this.button1.Text = "Ovrire";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // bunifuDragControl1
-            // 
-          //  this.bunifuDragControl1.Fixed = true;
-          //  this.bunifuDragControl1.Horizontal = true;
-          //  this.bunifuDragControl1.TargetControl = this;
-          //  this.bunifuDragControl1.Vertical = true;
             // 
             // button4
             // 
@@ -214,7 +189,7 @@
             this.textBox1.Location = new System.Drawing.Point(319, 214);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(299, 33);
-            this.textBox1.TabIndex = 189;
+            this.textBox1.TabIndex = 2;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
@@ -311,14 +286,47 @@
             this.textBox4.Location = new System.Drawing.Point(254, 282);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(364, 33);
-            this.textBox4.TabIndex = 203;
+            this.textBox4.TabIndex = 3;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Location = new System.Drawing.Point(140, 154);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.Properties.Appearance.Options.UseFont = true;
+            this.comboBox2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBox2.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSearch;
+            this.comboBox2.Size = new System.Drawing.Size(478, 26);
+            this.comboBox2.TabIndex = 204;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Location = new System.Drawing.Point(140, 102);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Properties.Appearance.Options.UseFont = true;
+            this.comboBox1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBox1.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSearch;
+            this.comboBox1.Size = new System.Drawing.Size(478, 26);
+            this.comboBox1.TabIndex = 203;
             // 
             // update_deplacement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 652);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.datePicker2);
@@ -327,9 +335,7 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
@@ -348,6 +354,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "update_deplacement";
             this.Load += new System.EventHandler(this.update_deplacement_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.comboBox2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBox1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,9 +369,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button1;
      //   private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
@@ -380,5 +386,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox4;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private DevExpress.XtraEditors.LookUpEdit comboBox2;
+        private DevExpress.XtraEditors.LookUpEdit comboBox1;
     }
 }

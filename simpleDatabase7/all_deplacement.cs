@@ -83,15 +83,21 @@ namespace simpleDatabase7
             DataTable dt = new DataTable();
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);
             da.Fill(dt);
-            comboBox1.DataSource = dt;
-            comboBox1.ValueMember = "id_Person";
-            comboBox1.DisplayMember = "Nom";
-            comboBox1.SelectedIndex = -1;
+            comboBox1.Properties.DataSource = dt;
+            comboBox1.Properties.ValueMember = "id_Person";
+            comboBox1.Properties.DisplayMember = "Nom";
+            comboBox1.ItemIndex = -1;
+
+            comboBox1.Properties.PopulateColumns();
+            comboBox1.Properties.Columns[0].Visible = false;
+            comboBox1.Properties.Columns[2].Visible = false;
+            comboBox1.Properties.Columns[3].Visible = false;
+
 
             Program.sql_con.Close();
 
             //comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
+           // comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -115,7 +121,7 @@ namespace simpleDatabase7
             {
                 OleDbCommand cmd = Program.sql_con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"SELECT  GRADE.type,GRADE.Taux,Personne.Nom,mission.id ,mission.type_mession , mission.date_depart as date_depart,mission.date_retour as date_retour , mission.DESTINATION as DESTINATION , GRADE.Taux as Taux_Fix , mission.nbr_Taux as Taux , mission.date_depart as date_depart_H , mission.date_retour as date_retour_H from(Personne  inner join mission  on  Personne.id_Person = mission.id_person) inner join GRADE on GRADE.id = mission.id_grade where mission.Archive = 0 and Personne.id_Person = {comboBox1.SelectedValue.ToString()} order by mission.date_depart desc";
+                cmd.CommandText = $"SELECT  GRADE.type,GRADE.Taux,Personne.Nom,mission.id ,mission.type_mession , mission.date_depart as date_depart,mission.date_retour as date_retour , mission.DESTINATION as DESTINATION , GRADE.Taux as Taux_Fix , mission.nbr_Taux as Taux , mission.date_depart as date_depart_H , mission.date_retour as date_retour_H from(Personne  inner join mission  on  Personne.id_Person = mission.id_person) inner join GRADE on GRADE.id = mission.id_grade where mission.Archive = 0 and Personne.id_Person = {comboBox1.EditValue.ToString()} order by mission.date_depart desc";
 
                 DataTable dt1 = new DataTable();
                 OleDbDataAdapter da1 = new OleDbDataAdapter(cmd);
@@ -137,18 +143,18 @@ namespace simpleDatabase7
 
            // People obj = peopleBindingSource3.Current as People;
 
-            if (comboBox1.SelectedIndex != -1)
+            if (comboBox1.ItemIndex != -1)
             {
                 using (OleDbConnection db = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + filePath + "/base_Donné-deplacement.accdb"))
 
                 {
                     if (db.State == ConnectionState.Closed)
                         db.Open();
-                    string query = $"SELECT mission.date_depart as date_depart,mission.date_retour as date_retour , mission.DESTINATION as DESTINATION , GRADE.Taux as Taux_Fix , mission.nbr_Taux as Taux , mission.date_depart as date_depart_H , mission.date_retour as date_retour_H from(Personne  inner join mission  on  Personne.id_Person = mission.id_person) inner join GRADE on GRADE.id = mission.id_grade where mission.Archive = 0 and Personne.id_Person = { comboBox1.SelectedValue.ToString()} order by mission.date_depart asc";
+                    string query = $"SELECT mission.date_depart as date_depart,mission.date_retour as date_retour , mission.DESTINATION as DESTINATION , GRADE.Taux as Taux_Fix , mission.nbr_Taux as Taux , mission.date_depart as date_depart_H , mission.date_retour as date_retour_H from(Personne  inner join mission  on  Personne.id_Person = mission.id_person) inner join GRADE on GRADE.id = mission.id_grade where mission.Archive = 0 and Personne.id_Person = { comboBox1.EditValue.ToString()} order by mission.date_depart asc";
                     List<mession> details = db.Query<mession>(query, commandType: CommandType.Text).ToList();
                     using (Etat_des_sommes_dues frm = new Etat_des_sommes_dues())
                     {
-                        frm.PrintInvoice(int.Parse(comboBox1.SelectedValue.ToString()), details);
+                        frm.PrintInvoice(int.Parse(comboBox1.EditValue.ToString()), details);
                         frm.WindowState = FormWindowState.Maximized;
                         frm.ShowDialog();
 
@@ -280,16 +286,27 @@ namespace simpleDatabase7
             string value = gridView1.GetFocusedDataRow()["id"].ToString();
             update_deplacement update = new update_deplacement(value);
                 update.ShowDialog();
-            
-          
+            selectData();
+
+
         }
 
         private void Ovrire_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex != -1)
+            if (comboBox1.ItemIndex != -1)
             {
 
             selectData();
+
+            }
+        }
+
+        private void comboBox1_EditValueChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.ItemIndex != -1)
+            {
+
+                selectData();
 
             }
         }

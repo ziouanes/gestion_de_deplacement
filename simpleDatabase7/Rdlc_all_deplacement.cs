@@ -143,7 +143,7 @@ namespace simpleDatabase7
 
             if (allday == 0)
             {
-                if ((d1.Value.Hour <= 11 && d2.Value.Hour >= 11) || (d1.Value.Hour <= 12 && d2.Value.Hour >= 12) || (d1.Value.Hour <= 13 && d2.Value.Hour >= 13) || (d1.Value.Hour <= 14 && d2.Value.Hour >= 14))
+                if ((d1.Value.Hour <= 08 && d2.Value.Hour >= 08) || (d1.Value.Hour <= 09 && d2.Value.Hour >= 09) || (d1.Value.Hour <= 10 && d2.Value.Hour >= 10) || (d1.Value.Hour <= 11 && d2.Value.Hour >= 11))
                 {
                     q++;
                 }
@@ -246,6 +246,8 @@ namespace simpleDatabase7
         
         private void Rdlc_all_deplacement_Load(object sender, EventArgs e)
         {
+           // MessageBox.Show(_id);
+
             if (int.Parse(_id) == 0)
             {
                 button1.Visible = false;
@@ -253,8 +255,8 @@ namespace simpleDatabase7
                 TimeSpan difference = _date_retour - _date_depart;
             var days = difference.TotalDays;
             int day1 = System.Convert.ToInt32(System.Math.Floor(days));
-          //MessageBox.Show("day ...." + day1.ToString());
-            //MessageBox.Show("taux ...." + GetLocaleTaux(_date_depart, _date_retour).ToString());
+         // MessageBox.Show("day ...." + day1.ToString());
+           // MessageBox.Show("taux ...." + GetLocaleTaux(_date_depart, _date_retour).ToString());
 
            // var dates = new List<DateTime>();
 
@@ -388,8 +390,6 @@ namespace simpleDatabase7
                         updateCommand.Parameters.AddWithValue("@date_depart", _date_depart);
                         updateCommand.Parameters.AddWithValue("@date_retour", _date_retour);
                         updateCommand.Parameters.AddWithValue("@Transport", _transport);
-                        updateCommand.Parameters.AddWithValue("@id", _id);
-
                         //updateCommand.Parameters.AddWithValue("@nbr_Taux", GetLocaleTaux(_date_depart, _date_retour));
                         if (GetLocaleTaux(_date_depart, _date_retour) < 0)
                         {
@@ -401,6 +401,8 @@ namespace simpleDatabase7
                             updateCommand.Parameters.AddWithValue("@nbr_Taux", GetLocaleTaux(_date_depart, _date_retour));
 
                         }
+                        updateCommand.Parameters.AddWithValue("@id", _id);
+
 
 
                         updateCommand.ExecuteNonQuery();

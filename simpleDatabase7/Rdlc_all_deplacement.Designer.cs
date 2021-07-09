@@ -128,7 +128,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(393, 660);
+            this.button3.Location = new System.Drawing.Point(406, 658);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(189, 32);
             this.button3.TabIndex = 208;
