@@ -37,12 +37,12 @@ namespace simpleDatabase7
             using (OleDbConnection db = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + filePath + "/base_Donné-deplacement.accdb"))
                 if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
             {
-                OleDbCommand cmd = Program.sql_con.CreateCommand();
+                SqlCommand cmd = Program.sql_con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "SELECT id_person ,  id_grade , type_mession,DESTINATION,DESTINATION_ar,date_depart,date_retour,Transport from mission where id =" + id_deplacemet + "";
                 DataTable table = new DataTable();
                 cmd.ExecuteNonQuery();
-                OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(table);
                 foreach (DataRow row in table.Rows)
                 {
@@ -75,12 +75,12 @@ namespace simpleDatabase7
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
 
-            OleDbCommand cmd = Program.sql_con.CreateCommand();
+            SqlCommand cmd = Program.sql_con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from GRADE ORDER BY type";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             comboBox2.Properties.DataSource = dt;
             comboBox2.Properties.ValueMember = "id";
@@ -101,12 +101,12 @@ namespace simpleDatabase7
 
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
-            OleDbCommand cmd = Program.sql_con.CreateCommand();
+            SqlCommand cmd = Program.sql_con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select  * from Personne ORDER BY Nom";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             comboBox1.Properties.DataSource = dt;
             comboBox1.Properties.ValueMember = "id_Person";

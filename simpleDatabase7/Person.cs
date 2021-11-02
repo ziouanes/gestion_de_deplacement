@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -55,7 +56,7 @@ namespace simpleDatabase7
             {
 
                 if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
-                Program.sql_cmd = new OleDbCommand("SELECT * from Personne where Nom =  '" + textBox8.Text + "'", Program.sql_con);
+                Program.sql_cmd = new SqlCommand("SELECT * from Personne where Nom =  '" + textBox8.Text + "'", Program.sql_con);
                 Program.db = Program.sql_cmd.ExecuteReader();
                 if (Program.db.HasRows)
                 {

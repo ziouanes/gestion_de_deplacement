@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 
 namespace simpleDatabase7
 {
@@ -32,12 +33,12 @@ namespace simpleDatabase7
 
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
-            OleDbCommand cmd = Program.sql_con.CreateCommand();
+            SqlCommand cmd = Program.sql_con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select  * from Personne";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             comboBox1.DataSource = dt;
             comboBox1.ValueMember = "id_Person";
@@ -55,12 +56,12 @@ namespace simpleDatabase7
             using (OleDbConnection db = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + filePath + "/base_Donné-deplacement.accdb"))
 
             {
-                OleDbCommand cmd = Program.sql_con.CreateCommand();
+                SqlCommand cmd = Program.sql_con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = $"SELECT  GRADE.type,GRADE.Taux,Personne.Nom,mission.id ,mission.type_mession , mission.date_depart as date_depart,mission.date_retour as date_retour , mission.DESTINATION as DESTINATION , GRADE.Taux as Taux_Fix , mission.nbr_Taux as Taux , mission.date_depart as date_depart_H , mission.date_retour as date_retour_H from(Personne  inner join mission  on  Personne.id_Person = mission.id_person) inner join GRADE on GRADE.id = mission.id_grade where mission.Archive = 1 and Personne.id_Person = {comboBox1.SelectedValue.ToString()}";
 
                 DataTable dt1 = new DataTable();
-                OleDbDataAdapter da1 = new OleDbDataAdapter(cmd);
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd);
                 da1.Fill(dt1);
                 gridControl1.DataSource = dt1;
             }
@@ -86,7 +87,7 @@ namespace simpleDatabase7
             row.ForEach(d =>
             {
 
-                using (OleDbCommand updateCommand = new OleDbCommand("UPDATE mission SET Archive = ?  WHERE id = ?", Program.sql_con))
+                using (SqlCommand updateCommand = new SqlCommand("UPDATE mission SET Archive = @Archive  WHERE id = @id", Program.sql_con))
                 {
                     if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 

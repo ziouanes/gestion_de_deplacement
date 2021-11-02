@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
-
+using System.Data.SqlClient;
 
 namespace simpleDatabase7
 {
@@ -39,12 +39,12 @@ namespace simpleDatabase7
 
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
-            OleDbCommand cmd = Program.sql_con.CreateCommand();
+            SqlCommand cmd = Program.sql_con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select  * from Personne ORDER BY Nom";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             comboBox1.DataSource = dt;
             comboBox1.ValueMember = "id_Person";
@@ -64,13 +64,13 @@ namespace simpleDatabase7
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
             if (comboBox1.SelectedIndex > -1)
             {
-                OleDbCommand cmd = Program.sql_con.CreateCommand();
+                SqlCommand cmd = Program.sql_con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 s = comboBox1.SelectedValue.ToString();
                 cmd.CommandText = "SELECT CIN ,  RIB , ar_Nom from Personne where id_Person =" + s + "";
                 DataTable table = new DataTable();
                 cmd.ExecuteNonQuery();
-                OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(table);
                 foreach (DataRow row in table.Rows)
                 {
@@ -92,7 +92,7 @@ namespace simpleDatabase7
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (OleDbCommand updateCommand = new OleDbCommand("UPDATE Personne SET CIN = ?, ar_Nom = ? , RIB = ? WHERE id_Person = ?", Program.sql_con))
+            using (SqlCommand updateCommand = new SqlCommand("UPDATE Personne SET CIN = @CIN, ar_Nom = @ar_Nom , RIB = @ar_Nom WHERE id_Person = @id_Person", Program.sql_con))
             {
                 if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
@@ -118,7 +118,7 @@ namespace simpleDatabase7
 
         private void button2_Click(object sender, EventArgs e)
         {
-            using (OleDbCommand deleteCommand = new OleDbCommand("DELETE FROM Personne WHERE id_Person = ?", Program.sql_con))
+            using (SqlCommand deleteCommand = new SqlCommand("DELETE FROM Personne WHERE id_Person = @id_Person", Program.sql_con))
             {
                
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();

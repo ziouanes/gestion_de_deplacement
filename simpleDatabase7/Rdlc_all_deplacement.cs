@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using System.Data.OleDb;
-
+using System.Data.SqlClient;
 
 namespace simpleDatabase7
 {
@@ -282,15 +282,15 @@ namespace simpleDatabase7
                 }
 
                 if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
-            
-            
-                OleDbCommand cmd = Program.sql_con.CreateCommand();
+
+
+                SqlCommand cmd = Program.sql_con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                
                 cmd.CommandText = "SELECT TYPE_ar from GRADE where id =" + _gradeValue + "";
                 DataTable table = new DataTable();
                 cmd.ExecuteNonQuery();
-                OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(table);
                 foreach (DataRow row in table.Rows)
                 {
@@ -302,13 +302,13 @@ namespace simpleDatabase7
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
 
-            OleDbCommand cmd1 = Program.sql_con.CreateCommand();
+                SqlCommand cmd1 = Program.sql_con.CreateCommand();
             cmd.CommandType = CommandType.Text;
 
             cmd.CommandText = "SELECT ar_NOM from Personne where id_Person =" + _PersoneValue + "";
             DataTable table1 = new DataTable();
             cmd.ExecuteNonQuery();
-            OleDbDataAdapter da1 = new OleDbDataAdapter(cmd);
+            SqlDataAdapter da1 = new SqlDataAdapter(cmd);
             da.Fill(table);
             foreach (DataRow row in table.Rows)
             {
@@ -378,7 +378,7 @@ namespace simpleDatabase7
                     if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
 
-                    using (OleDbCommand updateCommand = new OleDbCommand("UPDATE mission SET id_person = ? ,id_grade =? ,type_mession = ?,DESTINATION  = ? ,DESTINATION_ar = ?,date_depart = ? , date_retour = ? , Transport = ?  , nbr_Taux = ?  WHERE id = ?", Program.sql_con))
+                    using (SqlCommand updateCommand = new SqlCommand("UPDATE mission SET id_person = @id_person ,id_grade =@id_grade ,type_mession = @type_mession,DESTINATION  = @DESTINATION ,DESTINATION_ar = @DESTINATION_ar,date_depart = @date_depart , date_retour = @date_retour , Transport = @Transport  , nbr_Taux = @nbr_Taux  WHERE id = @id", Program.sql_con))
                     {
                         if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
@@ -419,7 +419,7 @@ namespace simpleDatabase7
 
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
-                    using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO mission ([id_person],[id_grade],[type_mession],[DESTINATION],[DESTINATION_ar],[date_depart],[date_retour],[Transport],[nbr_Taux]) VALUES (?,?,?,?,?,?,?,?,?)", Program.sql_con))
+                    using (SqlCommand insertCommand = new SqlCommand("INSERT INTO mission ([id_person],[id_grade],[type_mession],[DESTINATION],[DESTINATION_ar],[date_depart],[date_retour],[Transport],[nbr_Taux]) VALUES (@id_person,@id_grade,@type_mession,@DESTINATION,@DESTINATION_ar,@date_depart,@date_retour,@Transport,@nbr_Taux)", Program.sql_con))
                     {
 
 
@@ -470,7 +470,7 @@ namespace simpleDatabase7
             {
                     if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
-                using (OleDbCommand insertCommand = new OleDbCommand("INSERT INTO mission ([id_person],[id_grade],[type_mession],[DESTINATION],[DESTINATION_ar],[date_depart],[date_retour],[Transport],[nbr_Taux]) VALUES (?,?,?,?,?,?,?,?,?)", Program.sql_con))
+                using (SqlCommand insertCommand = new SqlCommand("INSERT INTO mission ([id_person],[id_grade],[type_mession],[DESTINATION],[DESTINATION_ar],[date_depart],[date_retour],[Transport],[nbr_Taux]) VALUES (@id_person,@id_grade,@type_mession,@DESTINATION,@DESTINATION_ar,@date_depart,@date_retour,@Transport,nbr_Taux)", Program.sql_con))
                 {
 
 

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
-
+using System.Data.SqlClient;
 
 namespace simpleDatabase7
 {
@@ -37,6 +37,9 @@ namespace simpleDatabase7
 
 
             datePicker1.Value = DateTime.Today.AddDays(0);
+            datePicker1.Value = DateTime.Now;
+
+
             datePicker2.Value = DateTime.Today.AddDays(0);
 
             datePicker1.CustomFormat = "yyyy-MM-dd | HH:mm";
@@ -57,12 +60,12 @@ namespace simpleDatabase7
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
 
-            OleDbCommand cmd = Program.sql_con.CreateCommand();
+            SqlCommand cmd = Program.sql_con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from GRADE ORDER BY type";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             comboBox2.Properties.DataSource = dt;
             comboBox2.Properties.ValueMember = "id";
@@ -85,12 +88,12 @@ namespace simpleDatabase7
 
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
-            OleDbCommand cmd = Program.sql_con.CreateCommand();
+            SqlCommand cmd = Program.sql_con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select  * from Personne ORDER BY Nom";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             comboBox1.Properties.DataSource = dt;
             comboBox1.Properties.ValueMember = "id_Person";

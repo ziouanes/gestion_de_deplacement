@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(all_deplacement));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(all_deplacement));
             this.peopleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.peopleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -70,6 +70,8 @@
             this.peopleBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -91,18 +93,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // peopleBindingSource
             // 
-            this.peopleBindingSource.DataSource = typeof(simpleDatabase7.People);
+        //    this.peopleBindingSource.DataSource = typeof(simpleDatabase7.People);
             // 
             // peopleBindingSource1
             // 
-            this.peopleBindingSource1.DataSource = typeof(simpleDatabase7.People);
+          //  this.peopleBindingSource1.DataSource = typeof(simpleDatabase7.People);
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.simpleButton1);
             this.layoutControl1.Controls.Add(this.comboBox1);
             this.layoutControl1.Controls.Add(this.Ovrire);
             this.layoutControl1.Controls.Add(this.button1);
@@ -233,7 +237,7 @@
             this.Afficher_invoice.Size = new System.Drawing.Size(123, 24);
             this.Afficher_invoice.StyleController = this.layoutControl1;
             this.Afficher_invoice.TabIndex = 8;
-            this.Afficher_invoice.Text = "Print";
+            this.Afficher_invoice.Text = "imprimer";
             this.Afficher_invoice.Click += new System.EventHandler(this.Afficher_invoice_Click);
             // 
             // gridControl1
@@ -258,7 +262,7 @@
             // 
             // messionBindingSource
             // 
-            this.messionBindingSource.DataSource = typeof(simpleDatabase7.mession);
+          //  this.messionBindingSource.DataSource = typeof(simpleDatabase7.mession);
             // 
             // gridView1
             // 
@@ -359,7 +363,8 @@
             this.emptySpaceItem4,
             this.layoutControlItem5,
             this.layoutControlItem1,
-            this.layoutControlItem6});
+            this.layoutControlItem6,
+            this.layoutControlItem2});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1009, 590);
             this.Root.TextVisible = false;
@@ -378,7 +383,7 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(320, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(542, 34);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(271, 34);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4
@@ -427,7 +432,7 @@
             // 
             // peopleBindingSource2
             // 
-            this.peopleBindingSource2.DataSource = typeof(simpleDatabase7.People);
+      //      this.peopleBindingSource2.DataSource = typeof(simpleDatabase7.People);
             // 
             // emptySpaceItem3
             // 
@@ -444,6 +449,30 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.DimGray;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(603, 12);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(267, 24);
+            this.simpleButton1.StyleController = this.layoutControl1;
+            this.simpleButton1.TabIndex = 13;
+            this.simpleButton1.Text = "Spécial";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.simpleButton1;
+            this.layoutControlItem2.Location = new System.Drawing.Point(591, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(271, 34);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
             // 
             // all_deplacement
             // 
@@ -485,6 +514,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -532,5 +562,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.LookUpEdit comboBox1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
@@ -38,12 +39,12 @@ namespace simpleDatabase7
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
 
-            OleDbCommand cmd = Program.sql_con.CreateCommand();
+            SqlCommand cmd = Program.sql_con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from GRADE ORDER BY type";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             comboBox1.DataSource = dt;
             comboBox1.ValueMember = "id";
@@ -65,7 +66,7 @@ namespace simpleDatabase7
 
             else
             {
-                using (OleDbCommand updateCommand = new OleDbCommand("UPDATE GRADE SET Taux = ? WHERE id = ?", Program.sql_con))
+                using (SqlCommand updateCommand = new SqlCommand("UPDATE GRADE SET Taux = @Taux WHERE id = @id", Program.sql_con))
                 {
                     if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
@@ -111,13 +112,13 @@ namespace simpleDatabase7
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
             if (comboBox1.SelectedIndex > -1)
             {
-                OleDbCommand cmd = Program.sql_con.CreateCommand();
+                SqlCommand cmd = Program.sql_con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 s = comboBox1.SelectedValue.ToString();
                 cmd.CommandText = "SELECT Taux from GRADE where id =" + s + "";
                 DataTable table = new DataTable();
                 cmd.ExecuteNonQuery();
-                OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(table);
                 foreach (DataRow row in table.Rows)
                 {

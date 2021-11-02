@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.OleDb;
 using Dapper;
+using System.Data.SqlClient;
 
 namespace simpleDatabase7
 {
@@ -20,27 +21,26 @@ namespace simpleDatabase7
             InitializeComponent();
         }
 
-        static string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-
+       // static string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
         public void PrintInvoice(int mession, List<mession> details)
         {
+           // MessageBox.Show(mession.ToString());
             somme_due_Report report = new somme_due_Report();
 
             foreach (DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
                 p.Visible = false;
-            using (OleDbConnection db = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + filePath + "/base_Donné-deplacement.accdb"))
 
-            {
-                if (db.State == ConnectionState.Closed)
-                    db.Open();
-                OleDbCommand cmd = db.CreateCommand();
+            
+                if (Program.sql_con.State == ConnectionState.Closed)
+                    Program.sql_con.Open();
+                SqlCommand cmd = Program.sql_con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "SELECT Personne.Nom,Personne.CIN,Personne.RIB,GRADE.type from (Personne  inner join mission  on  Personne.id_Person =mission.id_person) inner join GRADE on GRADE.id = mission.id_grade where mission.id_person =  " + mession + "";
+                cmd.CommandText = "SELECT top 1 Personne.Nom,Personne.CIN,Personne.RIB,GRADE.type from (Personne  inner join mission  on  Personne.id_Person =mission.id_person) inner join GRADE on GRADE.id = mission.id_grade where mission.id_person =  " + mession + "";
                 DataTable table = new DataTable();
                 cmd.ExecuteNonQuery();
-                OleDbDataAdapter da = new OleDbDataAdapter(cmd);
-                da.Fill(table);
+                SqlDataAdapter ad = new SqlDataAdapter(cmd);
+                ad.Fill(table);
                 foreach (DataRow row in table.Rows)
                 {
 
@@ -52,7 +52,7 @@ namespace simpleDatabase7
                 }
 
 
-            }
+            
         }
 
             private void Etat_des_sommes_dues_Load(object sender, EventArgs e)
@@ -63,22 +63,22 @@ namespace simpleDatabase7
             //_base_Donné_deplacementDataSet.PersonneDataTable p = new _base_Donné_deplacementDataSet.PersonneDataTable();
             //_base_Donné_deplacementDataSet.missionDataTable m = new _base_Donné_deplacementDataSet.missionDataTable();
 
-            if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
+            //if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
-            {
-                OleDbCommand cmd = Program.sql_con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                //cmd.CommandText = "SELECT GRADE.type,GRADE.Taux,Personne.Nom,Personne.CIN,Personne.RIB,mission.type_mession,mission.DESTINATION,mission.date_depart,mission.date_retour,mission.Transport FROM (Personne  inner join mission  on  Personne.id_Person = mission.id_person)inner join GRADE on GRADE.id = mission.id_grade where  mission.id = 3";
-                cmd.CommandText = "select * from grade";
-                cmd.ExecuteNonQuery();
-                OleDbDataAdapter da = new OleDbDataAdapter(cmd);
-               // da.Fill(_base_Donné_deplacementDataSet.GRADE);
+            //{
+            //    SqlCommand cmd = Program.sql_con.CreateCommand();
+            //    cmd.CommandType = CommandType.Text;
+            //    //cmd.CommandText = "SELECT GRADE.type,GRADE.Taux,Personne.Nom,Personne.CIN,Personne.RIB,mission.type_mession,mission.DESTINATION,mission.date_depart,mission.date_retour,mission.Transport FROM (Personne  inner join mission  on  Personne.id_Person = mission.id_person)inner join GRADE on GRADE.id = mission.id_grade where  mission.id = 3";
+            //    cmd.CommandText = "select * from grade";
+            //    cmd.ExecuteNonQuery();
+            //     SqlDataAdapter ad   = new SqlDataAdapter(cmd);
+            //   // da.Fill(_base_Donné_deplacementDataSet.GRADE);
              
 
 
-                //}
+            //    //}
 
-            }
+            //}
 
             
         }
@@ -89,6 +89,11 @@ namespace simpleDatabase7
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
         {
 
         }

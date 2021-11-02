@@ -1,6 +1,7 @@
-﻿namespace simpleDatabase7
+﻿
+namespace simpleDatabase7
 {
-    partial class Etat_des_sommes_dues
+    partial class special
     {
         /// <summary>
         /// Required designer variable.
@@ -268,7 +269,7 @@
             this.documentViewer1.IsMetric = false;
             this.documentViewer1.Location = new System.Drawing.Point(0, 158);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(1095, 522);
+            this.documentViewer1.Size = new System.Drawing.Size(1125, 327);
             this.documentViewer1.TabIndex = 0;
             // 
             // documentViewerRibbonController1
@@ -348,7 +349,7 @@
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemProgressBar1,
             this.repositoryItemZoomTrackBar1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1095, 158);
+            this.ribbonControl1.Size = new System.Drawing.Size(1125, 158);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
@@ -1451,25 +1452,24 @@
             this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewBarItem52);
             this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewStaticItem2);
             this.ribbonStatusBar1.ItemLinks.Add(this.zoomTrackBarEditItem1);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 680);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 485);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1095, 24);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1125, 24);
             // 
-            // Etat_des_sommes_dues
+            // special
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 704);
+            this.ClientSize = new System.Drawing.Size(1125, 509);
             this.Controls.Add(this.documentViewer1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
-            this.Name = "Etat_des_sommes_dues";
+            this.Name = "special";
             this.Ribbon = this.ribbonControl1;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar1;
-            this.Text = "Etat_des_sommes_dues";
-            this.Load += new System.EventHandler(this.Etat_des_sommes_dues_Load);
+            this.Text = "special";
+            this.Load += new System.EventHandler(this.special_Load);
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();

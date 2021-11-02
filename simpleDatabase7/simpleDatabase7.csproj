@@ -51,7 +51,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icons8_data_sheet.ico</ApplicationIcon>
+    <ApplicationIcon>output-onlinepngtools-_3_.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
@@ -189,6 +189,7 @@
     <Compile Include="Grade.Designer.cs">
       <DependentUpon>Grade.cs</DependentUpon>
     </Compile>
+    <Compile Include="messionspicial1.cs" />
     <Compile Include="mession.cs" />
     <Compile Include="People.cs" />
     <Compile Include="Person.cs">
@@ -215,6 +216,18 @@
     </Compile>
     <Compile Include="somme_due_Report.Designer.cs">
       <DependentUpon>somme_due_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="special.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="special.Designer.cs">
+      <DependentUpon>special.cs</DependentUpon>
+    </Compile>
+    <Compile Include="spicialReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="spicialReport.Designer.cs">
+      <DependentUpon>spicialReport.cs</DependentUpon>
     </Compile>
     <Compile Include="update_deplacement.cs">
       <SubType>Form</SubType>
@@ -283,6 +296,12 @@
     <EmbeddedResource Include="somme_due_Report.resx">
       <DependentUpon>somme_due_Report.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="special.resx">
+      <DependentUpon>special.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="spicialReport.resx">
+      <DependentUpon>spicialReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="update_deplacement.resx">
       <DependentUpon>update_deplacement.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,6 +352,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8_data_sheet.ico" />
+    <Content Include="output-onlinepngtools-_3_.ico" />
     <None Include="Resources\cancel_48px.png" />
     <None Include="Resources\icons8_cancel_16.png" />
     <None Include="Resources\member_64px.png" />

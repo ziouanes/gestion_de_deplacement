@@ -15,6 +15,7 @@ using System.Web.UI.WebControls;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid.Views.BandedGrid;
+using System.Data.SqlClient;
 
 namespace simpleDatabase7
 {
@@ -76,12 +77,12 @@ namespace simpleDatabase7
 
             if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
-            OleDbCommand cmd = Program.sql_con.CreateCommand();
+            SqlCommand cmd = Program.sql_con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select  * from Personne ORDER BY Nom";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             comboBox1.Properties.DataSource = dt;
             comboBox1.Properties.ValueMember = "id_Person";
@@ -116,18 +117,16 @@ namespace simpleDatabase7
         }
 
         private void selectData() {
-            using (OleDbConnection db = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + filePath + "/base_Donné-deplacement.accdb"))
-
-            {
-                OleDbCommand cmd = Program.sql_con.CreateCommand();
+          
+                SqlCommand cmd = Program.sql_con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = $"SELECT  GRADE.type,GRADE.Taux,Personne.Nom,mission.id ,mission.type_mession , mission.date_depart as date_depart,mission.date_retour as date_retour , mission.DESTINATION as DESTINATION , GRADE.Taux as Taux_Fix , mission.nbr_Taux as Taux , mission.date_depart as date_depart_H , mission.date_retour as date_retour_H from(Personne  inner join mission  on  Personne.id_Person = mission.id_person) inner join GRADE on GRADE.id = mission.id_grade where mission.Archive = 0 and Personne.id_Person = {comboBox1.EditValue.ToString()} order by mission.date_depart desc";
 
                 DataTable dt1 = new DataTable();
-                OleDbDataAdapter da1 = new OleDbDataAdapter(cmd);
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd);
                 da1.Fill(dt1);
                 gridControl1.DataSource = dt1;
-            }
+            
         } 
        
 
@@ -145,13 +144,11 @@ namespace simpleDatabase7
 
             if (comboBox1.ItemIndex != -1)
             {
-                using (OleDbConnection db = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + filePath + "/base_Donné-deplacement.accdb"))
-
-                {
-                    if (db.State == ConnectionState.Closed)
-                        db.Open();
+               
+                    if (Program.sql_con.State == ConnectionState.Closed)
+                        Program.sql_con.Open();
                     string query = $"SELECT mission.date_depart as date_depart,mission.date_retour as date_retour , mission.DESTINATION as DESTINATION , GRADE.Taux as Taux_Fix , mission.nbr_Taux as Taux , mission.date_depart as date_depart_H , mission.date_retour as date_retour_H from(Personne  inner join mission  on  Personne.id_Person = mission.id_person) inner join GRADE on GRADE.id = mission.id_grade where mission.Archive = 0 and Personne.id_Person = { comboBox1.EditValue.ToString()} order by mission.date_depart asc";
-                    List<mession> details = db.Query<mession>(query, commandType: CommandType.Text).ToList();
+                    List<mession> details = Program.sql_con.Query<mession>(query, commandType: CommandType.Text).ToList();
                     using (Etat_des_sommes_dues frm = new Etat_des_sommes_dues())
                     {
                         frm.PrintInvoice(int.Parse(comboBox1.EditValue.ToString()), details);
@@ -159,7 +156,7 @@ namespace simpleDatabase7
                         frm.ShowDialog();
 
                     }
-                }
+                
 
 
             }
@@ -196,7 +193,7 @@ namespace simpleDatabase7
             
 
 
-            using (OleDbCommand deleteCommand = new OleDbCommand("DELETE FROM mission WHERE id = ?", Program.sql_con))
+            using (SqlCommand deleteCommand = new SqlCommand("DELETE FROM mission WHERE id = id", Program.sql_con))
             {
 
                 if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
@@ -234,7 +231,7 @@ namespace simpleDatabase7
             row.ForEach(d =>
                  {
 
-                     using (OleDbCommand updateCommand = new OleDbCommand("UPDATE mission SET Archive = ?  WHERE id = ?", Program.sql_con))
+                     using (SqlCommand updateCommand = new SqlCommand("UPDATE mission SET Archive = @Archive  WHERE id = @id", Program.sql_con))
                      {
                          if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
@@ -309,6 +306,74 @@ namespace simpleDatabase7
                 selectData();
 
             }
+        }
+        public void RunStoredProc(string person)
+        {
+
+            //MessageBox.Show(lastdate.ToString());
+            //error here
+            try
+            {
+                if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
+                SqlCommand cmd = new SqlCommand("dbo.[spicial]", Program.sql_con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@person", person);
+                //cmd.Parameters.AddWithValue("@dateEffet", lastdate);
+                //cmd.Parameters.AddWithValue("@id_order", order_service);
+
+                //output
+                //SqlParameter param = new SqlParameter("@person", SqlDbType.Int);
+                //param.Direction = ParameterDirection.Output;
+                //cmd.Parameters.Add(param);
+
+
+
+
+
+
+
+                cmd.ExecuteNonQuery();
+
+               // person = param.Value.ToString();
+
+
+            }
+            finally
+            {
+                if (Program.sql_con != null)
+                {
+                    Program.sql_con.Close();
+                }
+                if (Program.db != null)
+                {
+                    Program.db.Close();
+                }
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            //spicial
+            if (comboBox1.ItemIndex != -1)
+            {
+                RunStoredProc(comboBox1.EditValue.ToString());
+                if (Program.sql_con.State == ConnectionState.Closed)
+                    Program.sql_con.Open();
+                string query = $"SELECT   * from  messionspicialTEST";
+                List<messionspicial1> details = Program.sql_con.Query<messionspicial1>(query, commandType: CommandType.Text).ToList();
+                using (special frm = new special())
+                {
+
+                    frm.PrintInvoice(int.Parse(comboBox1.EditValue.ToString()), details);
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.ShowDialog();
+
+                }
+
+
+
+            }
+            else { MessageBox.Show("no data"); }
         }
     }
 }
