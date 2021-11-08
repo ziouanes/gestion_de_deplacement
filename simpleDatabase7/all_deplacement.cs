@@ -190,23 +190,26 @@ namespace simpleDatabase7
             //args.Caption = "suppression";
             //args.Text = "supprimer success.";
             //args.Buttons = new DialogResult[] { DialogResult.OK};
-            
 
-
-            using (SqlCommand deleteCommand = new SqlCommand("DELETE FROM mission WHERE id = id", Program.sql_con))
+            if (MessageBox.Show("Voulez-vous vraiment supprimer cette  mission ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
 
-                if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
-                deleteCommand.Parameters.AddWithValue("@id", value);
+                using (SqlCommand deleteCommand = new SqlCommand("DELETE  TOP (1) FROM mission WHERE id = @id", Program.sql_con))
+                {
 
-                deleteCommand.ExecuteNonQuery();
-                
+                    if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
-               
+                    deleteCommand.Parameters.AddWithValue("@id", value);
+
+                    deleteCommand.ExecuteNonQuery();
+
+
+
+                }
+                gridView1.DeleteRow(row);
+                //XtraMessageBox.Show(args).ToString();
             }
-            gridView1.DeleteRow(row);
-            //XtraMessageBox.Show(args).ToString();
 
         }
 
@@ -231,7 +234,7 @@ namespace simpleDatabase7
             row.ForEach(d =>
                  {
 
-                     using (SqlCommand updateCommand = new SqlCommand("UPDATE mission SET Archive = @Archive  WHERE id = @id", Program.sql_con))
+                     using (SqlCommand updateCommand = new SqlCommand("UPDATE  mission SET Archive = @Archive  WHERE id = @id", Program.sql_con))
                      {
                          if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 

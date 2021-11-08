@@ -470,7 +470,7 @@ namespace simpleDatabase7
             {
                     if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
-                using (SqlCommand insertCommand = new SqlCommand("INSERT INTO mission ([id_person],[id_grade],[type_mession],[DESTINATION],[DESTINATION_ar],[date_depart],[date_retour],[Transport],[nbr_Taux]) VALUES (@id_person,@id_grade,@type_mession,@DESTINATION,@DESTINATION_ar,@date_depart,@date_retour,@Transport,nbr_Taux)", Program.sql_con))
+                using (SqlCommand insertCommand = new SqlCommand("INSERT INTO mission ([id_person],[id_grade],[type_mession],[DESTINATION],[DESTINATION_ar],[date_depart],[date_retour],[Transport],[nbr_Taux]) VALUES (@id_person,@id_grade,@type_mession,@DESTINATION,@DESTINATION_ar,@date_depart,@date_retour,@Transport,@nbr_Taux)", Program.sql_con))
                 {
 
 

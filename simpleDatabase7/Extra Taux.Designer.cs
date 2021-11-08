@@ -44,6 +44,7 @@ namespace simpleDatabase7
             this.rangeTrackBarControl1.Name = "rangeTrackBarControl1";
             this.rangeTrackBarControl1.Properties.LabelAppearance.Options.UseTextOptions = true;
             this.rangeTrackBarControl1.Properties.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.rangeTrackBarControl1.Properties.Maximum = 20;
             this.rangeTrackBarControl1.Properties.ShowLabels = true;
             this.rangeTrackBarControl1.Properties.ShowLabelsForHiddenTicks = true;
             this.rangeTrackBarControl1.Properties.ShowValueToolTip = true;
