@@ -52,11 +52,11 @@ namespace simpleDatabase7
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox8.Text != "")
+            if (textBoxfrnom.Text != "")
             {
 
                 if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
-                Program.sql_cmd = new SqlCommand("SELECT * from Personne where Nom =  '" + textBox8.Text + "'", Program.sql_con);
+                Program.sql_cmd = new SqlCommand("SELECT * from Personne where Nom =  '" + textBoxfrnom.Text + "'", Program.sql_con);
                 Program.db = Program.sql_cmd.ExecuteReader();
                 if (Program.db.HasRows)
                 {
@@ -64,15 +64,15 @@ namespace simpleDatabase7
                     MessageBox.Show("ce Grade est déjà ajouter");
                 }
 
-                else if (MessageBox.Show("Voulez-vous vraiment ajouter un nouveau GRADE   " + textBox8.Text + " ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                else if (MessageBox.Show("Voulez-vous vraiment ajouter un nouveau GRADE   " + textBoxfrnom.Text + " ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    string textquery = "INSERT INTO Personne (Nom,CIN,RIB,ar_Nom) VALUES ('" + textBox8.Text + "','" + textBox6.Text + "','" + textBox4.Text +"','" + textBox1.Text +"')";
+                    string textquery = "INSERT INTO Personne (Nom,CIN,RIB,ar_Nom) VALUES ('" + textBoxfrnom.Text + "','" + textBoxcin.Text + "','" + textBoxrib.Text +"','" + textBoxarnome.Text +"')";
                     ExecuteQuery(textquery);
                     this.Alert("ajouter Personne Succès", Form_Alert.enmType.Success);
-                    textBox8.Text = "";
-                    textBox6.Text = "";
-                    textBox4.Text = "";
-                    textBox1.Text = "";
+                    textBoxfrnom.Text = "";
+                    textBoxcin.Text = "";
+                    textBoxrib.Text = "";
+                    textBoxarnome.Text = "";
 
 
 

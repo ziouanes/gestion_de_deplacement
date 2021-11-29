@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(update_personne));
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxrib = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-         //   this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxcin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,17 +43,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxarnom = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox4
+            // textBoxrib
             // 
-            this.textBox4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(158, 245);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(318, 33);
-            this.textBox4.TabIndex = 192;
+            this.textBoxrib.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxrib.Location = new System.Drawing.Point(158, 245);
+            this.textBoxrib.Name = "textBoxrib";
+            this.textBoxrib.Size = new System.Drawing.Size(318, 33);
+            this.textBoxrib.TabIndex = 192;
             // 
             // label1
             // 
@@ -67,13 +65,6 @@
             this.label1.TabIndex = 191;
             this.label1.Text = "Rib :";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // bunifuDragControl1
-            // 
-          //  this.bunifuDragControl1.Fixed = true;
-          //  this.bunifuDragControl1.Horizontal = true;
-          //  this.bunifuDragControl1.TargetControl = this;
-          //  this.bunifuDragControl1.Vertical = true;
             // 
             // button2
             // 
@@ -107,13 +98,13 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox6
+            // textBoxcin
             // 
-            this.textBox6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(158, 189);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(318, 33);
-            this.textBox6.TabIndex = 188;
+            this.textBoxcin.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxcin.Location = new System.Drawing.Point(158, 189);
+            this.textBoxcin.Name = "textBoxcin";
+            this.textBoxcin.Size = new System.Drawing.Size(318, 33);
+            this.textBoxcin.TabIndex = 188;
             // 
             // label2
             // 
@@ -209,13 +200,13 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // textBox1
+            // textBoxarnom
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(158, 141);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(318, 33);
-            this.textBox1.TabIndex = 196;
+            this.textBoxarnom.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxarnom.Location = new System.Drawing.Point(158, 141);
+            this.textBoxarnom.Name = "textBoxarnom";
+            this.textBoxarnom.Size = new System.Drawing.Size(318, 33);
+            this.textBoxarnom.TabIndex = 196;
             // 
             // label3
             // 
@@ -232,15 +223,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 394);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxarnom);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBoxrib);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBoxcin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label4);
@@ -260,13 +251,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxrib;
         private System.Windows.Forms.Label label1;
       //  private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBoxcin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
@@ -275,7 +266,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxarnom;
         private System.Windows.Forms.Label label3;
     }
 }

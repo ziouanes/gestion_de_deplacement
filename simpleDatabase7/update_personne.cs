@@ -50,8 +50,9 @@ namespace simpleDatabase7
             comboBox1.ValueMember = "id_Person";
             comboBox1.DisplayMember = "Nom";
             comboBox1.SelectedIndex = -1;
-            textBox4.Text = "";
-            textBox6.Text = "";
+            textBoxrib.Text = "";
+            textBoxcin.Text = "";
+            textBoxarnom.Text = "";
             Program.sql_con.Close();
 
             //comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -74,9 +75,9 @@ namespace simpleDatabase7
                 da.Fill(table);
                 foreach (DataRow row in table.Rows)
                 {
-                    textBox6.Text = row["CIN"].ToString();
-                    textBox4.Text = row["RIB"].ToString();
-                    textBox1.Text = row["ar_Nom"].ToString();
+                    textBoxcin.Text = row["CIN"].ToString();
+                    textBoxrib.Text = row["RIB"].ToString();
+                    textBoxarnom.Text = row["ar_Nom"].ToString();
 
 
                 }
@@ -92,13 +93,13 @@ namespace simpleDatabase7
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (SqlCommand updateCommand = new SqlCommand("UPDATE Personne SET CIN = @CIN, ar_Nom = @ar_Nom , RIB = @ar_Nom WHERE id_Person = @id_Person", Program.sql_con))
+            using (SqlCommand updateCommand = new SqlCommand("UPDATE Personne SET CIN = @CIN, ar_Nom = @ar_Nom , RIB = @RIB WHERE id_Person = @id_Person", Program.sql_con))
             {
                 if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
 
-                updateCommand.Parameters.AddWithValue("@CIN", textBox6.Text);
-                updateCommand.Parameters.AddWithValue("@RIB", textBox4.Text);
-                updateCommand.Parameters.AddWithValue("@ar_Nom", textBox1.Text);
+                updateCommand.Parameters.AddWithValue("@CIN", textBoxcin.Text);
+                updateCommand.Parameters.AddWithValue("@RIB", textBoxrib.Text);
+                updateCommand.Parameters.AddWithValue("@ar_Nom", textBoxarnom.Text);
 
                 updateCommand.Parameters.AddWithValue("@id_Person", comboBox1.SelectedValue.ToString());
 
