@@ -26,7 +26,7 @@ namespace simpleDatabase7
         private void ExecuteQuery(string txtQuery)
         {
             //Program.SetConnection();
-            Program.sql_con.Open();
+            if (Program.sql_con.State == ConnectionState.Closed) Program.sql_con.Open();
             Program.sql_cmd = Program.sql_con.CreateCommand();
             Program.sql_cmd.CommandText = txtQuery;
             Program.sql_cmd.ExecuteNonQuery();
@@ -61,12 +61,12 @@ namespace simpleDatabase7
                 if (Program.db.HasRows)
                 {
 
-                    MessageBox.Show("ce Grade est déjà ajouter");
+                    MessageBox.Show("ce Personne est déjà ajouter");
                 }
 
-                else if (MessageBox.Show("Voulez-vous vraiment ajouter un nouveau GRADE   " + textBoxfrnom.Text + " ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                else if (MessageBox.Show("Voulez-vous vraiment ajouter un nouveau Personne   " + textBoxfrnom.Text + " ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    string textquery = "INSERT INTO Personne (Nom,CIN,RIB,ar_Nom) VALUES ('" + textBoxfrnom.Text + "','" + textBoxcin.Text + "','" + textBoxrib.Text +"','" + textBoxarnome.Text +"')";
+                    string textquery = "INSERT INTO Personne (Nom,CIN,RIB,ar_Nom) VALUES ('" + textBoxfrnom.Text + "','" + textBoxcin.Text + "','" + textBoxrib.Text +"',N'" + textBoxarnome.Text +"')";
                     ExecuteQuery(textquery);
                     this.Alert("ajouter Personne Succès", Form_Alert.enmType.Success);
                     textBoxfrnom.Text = "";

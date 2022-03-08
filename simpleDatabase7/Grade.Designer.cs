@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Grade));
-            //this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,13 +44,6 @@
             this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bunifuDragControl1
-            // 
-            //this.bunifuDragControl1.Fixed = true;
-            //this.bunifuDragControl1.Horizontal = true;
-            //this.bunifuDragControl1.TargetControl = this;
-            //this.bunifuDragControl1.Vertical = true;
             // 
             // button1
             // 
@@ -176,7 +167,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 25);
             this.label1.TabIndex = 179;
-            this.label1.Text = "Ar_Taux:";
+            this.label1.Text = "Ar_Type:";
             // 
             // spinEdit1
             // 

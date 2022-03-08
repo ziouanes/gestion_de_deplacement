@@ -775,7 +775,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>ج.م.أ م,ع,م - م,م,ش,ق/</Value>
+                      <Value>ج.م.أ م,ع,م - م,م/</Value>
                       <Style>
                         <FontFamily>Arabic Typesetting</FontFamily>
                         <FontSize>16pt</FontSize>
