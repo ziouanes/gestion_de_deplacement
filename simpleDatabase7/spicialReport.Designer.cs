@@ -588,7 +588,7 @@ namespace simpleDatabase7
             // 
             this.xrLabel3.AutoWidth = true;
             this.xrLabel3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?parameter1")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Now()")});
             this.xrLabel3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel3.ForeColor = System.Drawing.Color.DimGray;
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(98.92007F, 93.57854F);
